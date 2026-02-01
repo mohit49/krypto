@@ -6,8 +6,8 @@
     <title>Logino - Modern Web App</title>
     <link rel="stylesheet" href="https://use.typekit.net/ion1ndn.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <script type="module" crossorigin src="./assets/index-N39s20g-.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DcqjZgxC.css">
+  <script type="module" crossorigin src="./assets/index-Bondo3Fb.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-tvWC9n0_.css">
 </head>
 <body class="bg-[#262626] h-full m-0 p-[15px]">
     <!-- First Section - Full Screen with Header (mouse parallax only when in view) -->
@@ -156,66 +156,113 @@
         </div>
     </section>
 
-    <!-- Second Section - Auto height to fit accordion -->
-    <section class="w-full h-auto flex flex-col bg-white rounded-[20px] relative overflow-hidden mt-[15px] px-8 py-10">
-        <div class="w-[95%] mx-auto">
-        <!-- Solution Overview + Accordion (heading first, accordion below) -->
-       
-            <!-- Heading -->
-            <div class="relative inline-block mb-8 md:mb-10 z-10 ml-[5%]">
-                <div class="solution-overview-grid-bg absolute rounded-sm" style="width: 300px; height: 95%; left: 0; top: 0; z-index: 0;"></div>
-                <h1 class="relative z-10 text-5xl md:text-7xl lg:text-[100px] text-gray-900 leading-none" style="font-weight: 200;">
-                    Solution<br>Overview
-                </h1>
-            </div>
-
-            <!-- Accordion - 90% width, 20px border radius, below heading -->
-            <div class="solution-accordion w-full rounded-[20px] overflow-hidden border border-gray-200/20">
-                <div class="accordion-item" data-bg="#262626">
-                    <button type="button" class="accordion-header w-full text-left p-6 text-white font-bold flex items-center justify-between transition-colors" aria-expanded="true" aria-controls="accordion-panel-1" id="accordion-trigger-1">
-                        <span class="accordion-title flex items-baseline gap-3 flex-wrap"><span class="accordion-number">01</span> Coordination - Sovereignty - Trust</span>
-                    </button>
-                    <div id="accordion-panel-1" class="accordion-panel" role="region" aria-labelledby="accordion-trigger-1">
-                        <div class="accordion-content p-6 pt-0 text-white text-[35px] leading-snug">
-                            Today's coordination systems were not built for multi-party reality. They force organizations to: hand over control of proprietary data, rely on trusted intermediaries and audits, reconcile fragmented processes across systems, and accept limited automation beyond organizational boundaries. Blockchains remove intermediaries, but most were built for crypto-native use cases and fail to support privacy, scalability, and real-world execution.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item" data-bg="#1598f8">
-                    <button type="button" class="accordion-header w-full text-left p-6 text-white font-bold flex items-center justify-between transition-colors" aria-expanded="false" aria-controls="accordion-panel-2" id="accordion-trigger-2">
-                        <span class="accordion-title flex items-baseline gap-3 flex-wrap"><span class="accordion-number">02</span> Integration · Decentralization · Mobility</span>
-                    </button>
-                    <div id="accordion-panel-2" class="accordion-panel accordion-panel-closed" role="region" aria-labelledby="accordion-trigger-2">
-                        <div class="accordion-content p-6 pt-0 text-white text-[35px] leading-snug">
-                            Today's coordination systems were not built for multi-party reality. They force organizations to: hand over control of proprietary data, rely on trusted intermediaries and audits, reconcile fragmented processes across systems, and accept limited automation beyond organizational boundaries. Blockchains remove intermediaries, but most were built for crypto-native use cases and fail to support privacy, scalability, and real-world execution.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item" data-bg="#0053ff">
-                    <button type="button" class="accordion-header w-full text-left p-6 text-white font-bold flex items-center justify-between transition-colors" aria-expanded="false" aria-controls="accordion-panel-3" id="accordion-trigger-3">
-                        <span class="accordion-title flex items-baseline gap-3 flex-wrap"><span class="accordion-number">03</span> Privacy · Control · Verification</span>
-                    </button>
-                    <div id="accordion-panel-3" class="accordion-panel accordion-panel-closed" role="region" aria-labelledby="accordion-trigger-3">
-                        <div class="accordion-content p-6 pt-0 text-white text-[35px] leading-snug">
-                            Today's coordination systems were not built for multi-party reality. They force organizations to: hand over control of proprietary data, rely on trusted intermediaries and audits, reconcile fragmented processes across systems, and accept limited automation beyond organizational boundaries. Blockchains remove intermediaries, but most were built for crypto-native use cases and fail to support privacy, scalability, and real-world execution.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item" data-bg="#c0d4ff">
-                    <button type="button" class="accordion-header w-full text-left p-6 text-gray-900 font-bold flex items-center justify-between transition-colors" aria-expanded="false" aria-controls="accordion-panel-4" id="accordion-trigger-4">
-                        <span class="accordion-title flex items-baseline gap-3 flex-wrap"><span class="accordion-number">04</span> Unova Community</span>
-                    </button>
-                    <div id="accordion-panel-4" class="accordion-panel accordion-panel-closed" role="region" aria-labelledby="accordion-trigger-4">
-                        <div class="accordion-content p-6 pt-0 text-gray-900 text-[35px] leading-snug">
-                            Today's coordination systems were not built for multi-party reality. They force organizations to: hand over control of proprietary data, rely on trusted intermediaries and audits, reconcile fragmented processes across systems, and accept limited automation beyond organizational boundaries. Blockchains remove intermediaries, but most were built for crypto-native use cases and fail to support privacy, scalability, and real-world execution.
-                        </div>
-                    </div>
+    <!-- Second Section: Parallax scroll stack - tiles slide over each other -->
+    <div class="solution-parallax-wrapper w-full mt-[15px] bg-white rounded-[20px] px-8 py-10" style="height: 500vh;">
+        <!-- Heading: sticky, stays in place -->
+        <div class="sticky w-full bg-white rounded-[20px] px-8 py-10 pb-20" style="top: 0; z-index: 5;">
+            <div class="w-[95%] mx-auto">
+                <div class="relative inline-block mb-8 md:mb-10 ml-[5%]">
+                    <div class="solution-overview-grid-bg absolute rounded-sm" style="width: 300px; height: 95%; left: 0; top: 0; z-index: 0;"></div>
+                    <h1 class="relative z-10 text-5xl md:text-7xl lg:text-[100px] text-gray-900 leading-none" style="font-weight: 200;">
+                        Solution<br>Overview
+                    </h1>
                 </div>
             </div>
         </div>
+        
+        <!-- Parallax tiles: each sticks with gap from top, previous content visible -->
+        <div class="solution-tile active sticky w-full bg-white rounded-[20px] overflow-hidden px-8 py-10 min-h-screen" style="z-index: 10; background-color: #262626; top: 280px;">
+            <div class="w-[95%] mx-auto">
+                <div class="flex items-baseline gap-3 flex-wrap text-white font-bold text-[40px] mb-6">
+                    <span class="tile-number leading-none transition-all duration-300">01</span>
+                    <span>Coordination - Sovereignty - Trust</span>
+                </div>
+                <div class="text-white text-[35px] leading-snug font-extralight max-w-[80%]">
+                    Today's coordination systems were not built for multi-party reality. They force organizations to: hand over control of proprietary data, rely on trusted intermediaries and audits, reconcile fragmented processes across systems, and accept limited automation beyond organizational boundaries. Blockchains remove intermediaries, but most were built for crypto-native use cases and fail to support privacy, scalability, and real-world execution.
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution-tile sticky w-full bg-white rounded-[20px] overflow-hidden px-8 py-10 min-h-screen" style="z-index: 20; background-color: #1598f8; top: 280px;">
+            <div class="w-[95%] mx-auto">
+                <div class="flex items-baseline gap-3 flex-wrap text-white font-bold text-[40px] mb-6">
+                    <span class="tile-number leading-none transition-all duration-300">02</span>
+                    <span>Integration · Decentralization · Mobility</span>
+                </div>
+                <div class="text-white text-[35px] leading-snug font-extralight max-w-[80%]">
+                    Today's coordination systems were not built for multi-party reality. They force organizations to: hand over control of proprietary data, rely on trusted intermediaries and audits, reconcile fragmented processes across systems, and accept limited automation beyond organizational boundaries. Blockchains remove intermediaries, but most were built for crypto-native use cases and fail to support privacy, scalability, and real-world execution.
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution-tile sticky w-full bg-white rounded-[20px] overflow-hidden px-8 py-10 min-h-screen" style="z-index: 30; background-color: #0053ff; top: 280px;">
+            <div class="w-[95%] mx-auto">
+                <div class="flex items-baseline gap-3 flex-wrap text-white font-bold text-[40px] mb-6">
+                    <span class="tile-number leading-none transition-all duration-300">03</span>
+                    <span>Privacy · Control · Verification</span>
+                </div>
+                <div class="text-white text-[35px] leading-snug font-extralight max-w-[80%]">
+                    Today's coordination systems were not built for multi-party reality. They force organizations to: hand over control of proprietary data, rely on trusted intermediaries and audits, reconcile fragmented processes across systems, and accept limited automation beyond organizational boundaries. Blockchains remove intermediaries, but most were built for crypto-native use cases and fail to support privacy, scalability, and real-world execution.
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution-tile sticky w-full bg-white rounded-[20px] overflow-hidden px-8 py-10 min-h-screen" style="z-index: 40; background-color: #c0d4ff; top: 280px;">
+            <div class="w-[95%] mx-auto">
+                <div class="flex items-baseline gap-3 flex-wrap text-gray-900 font-bold text-[40px] mb-6">
+                    <span class="tile-number leading-none transition-all duration-300 text-gray-900">04</span>
+                    <span>Unova Community</span>
+                </div>
+                <div class="text-gray-900 text-[35px] leading-snug font-extralight max-w-[80%]">
+                    Today's coordination systems were not built for multi-party reality. They force organizations to: hand over control of proprietary data, rely on trusted intermediaries and audits, reconcile fragmented processes across systems, and accept limited automation beyond organizational boundaries. Blockchains remove intermediaries, but most were built for crypto-native use cases and fail to support privacy, scalability, and real-world execution.
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <!-- Main Content -->
-    </section>
+    <!-- Three tiles in a row (equal width, gap between) - before third section -->
+    <div class="w-full mt-[15px] flex gap-4 md:gap-6">
+        <div class="flex-1 min-w-0 rounded-[20px] bg-[#e2e2e2] overflow-hidden flex flex-col">
+            <img src="./assets/first-tile-Cyf0wIUA.png" alt="" class="w-full h-auto object-cover object-center" />
+            <div class="p-6 md:p-8 flex flex-col gap-4">
+              <h3 class="text-[30px] font-semibold text-gray-900">Setup a Wallet</h3>
+              <p class="text-[22px] text-gray-600 leading-relaxed">To connect to the Unova network, deploy or connect your node and configure a non-custodial wallet to manage credentials, approve transactions, and interact with applications and smart contracts on Unova Mainnet.</p>
+              <div class="flex items-center gap-2 mt-2">
+                <button type="button" class="h-12 px-6 flex items-center justify-center border-2 border-gray-900 text-gray-900 text-[24px] font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-colors">Learn more</button>
+                <button type="button" class="h-12 w-12 flex items-center justify-center shrink-0 border-2 border-gray-900 rounded-lg hover:bg-gray-900 hover:text-white transition-colors" aria-label="Open link">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        <div class="flex-1 min-w-0 rounded-[20px] bg-[#0053ff] overflow-hidden flex flex-col">
+            <div class="p-6 md:p-8 flex flex-col gap-4 flex-1">
+              <h3 class="text-[30px] font-semibold text-white">The UON Token</h3>
+              <p class="text-[22px] text-white/90 leading-relaxed">UON powers the Unova network and is used to pay transaction fees, execute smart contracts, secure the network, and enable decentralized application operations.</p>
+              <div class="flex items-center gap-2 mt-2">
+                <button type="button" class="h-12 px-6 flex items-center justify-center border-2 border-white text-white text-[24px] font-semibold rounded-lg hover:bg-white hover:text-[#0053ff] transition-colors">Learn more</button>
+                <button type="button" class="h-12 w-12 flex items-center justify-center shrink-0 border-2 border-white rounded-lg hover:bg-white hover:text-[#0053ff] transition-colors text-white" aria-label="Open link">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </button>
+              </div>
+            </div>
+            <img src="./assets/blue-tile-image-D5Zn6p4t.png" alt="" class="w-full h-auto object-cover object-center" />
+          </div>
+        <div class="flex-1 min-w-0 rounded-[20px] bg-[#3c3c3c] overflow-hidden flex flex-col text-white">
+            <img src="./assets/third-tile-WTY1LwSH.png" alt="" class="w-full h-auto object-cover object-center" />
+            <div class="p-6 md:p-8 flex flex-col gap-4">
+              <h3 class="text-[30px] font-semibold text-white">Build on Unova</h3>
+              <p class="text-[22px] text-white/90 leading-relaxed">Build decentralized applications on Unova using smart contracts, privacy-enabled data transmission, and a scalable execution layer designed for real-world use cases.</p>
+              <div class="flex items-center gap-2 mt-2">
+                <button type="button" class="h-12 px-6 flex items-center justify-center border-2 border-white text-white text-[24px] font-semibold rounded-lg hover:bg-white hover:text-[#3c3c3c] transition-colors">Start Building</button>
+                <button type="button" class="h-12 w-12 flex items-center justify-center shrink-0 border-2 border-white rounded-lg hover:bg-white hover:text-[#3c3c3c] transition-colors text-white" aria-label="Open link">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+    </div>
+
     <section class="w-full h-auto flex flex-col bg-white rounded-[20px] relative overflow-hidden mt-[15px] px-8 py-10">
         <div class="w-[95%] mx-auto">
         <!-- Third Section: Unova Solutions -->
@@ -337,12 +384,12 @@
             <span class="absolute left-0 right-0 top-1/2 h-px bg-[#e4e4e4] -translate-y-1/2" aria-hidden="true"></span>
             <span class="absolute left-1/2 top-0 bottom-0 w-px bg-[#e4e4e4] -translate-x-1/2" aria-hidden="true"></span>
             <img src="./assets/center-logo-DuV50n6T.png" alt="" class="absolute left-1/2 top-1/2 z-10 w-auto h-auto max-w-[80%] max-h-[80%] -translate-x-1/2 -translate-y-1/2 object-contain transition-transform duration-300 ease-out group-hover:scale-110" />
-            <!-- Part 1: Top-left - Telegram (block centered, text left-aligned) -->
-            <div class="absolute left-0 top-0 w-1/2 h-1/2 flex items-center justify-center p-6">
+            <!-- Part 1: Top-left - Telegram (content block centered in quadrant) -->
+            <div class="absolute left-0 top-0 w-1/2 h-1/2 flex flex-col items-center justify-center p-6">
               <div class="flex flex-col items-start gap-3 text-left">
                 <span class="text-black uppercase tracking-wide leading-tight" style="font-weight: 100; font-size: 24px; text-transform: uppercase;">JOIN OUR</span>
-                <span class="inline-flex items-center gap-2">
-                <span class="text-black tracking-wide leading-tight capitalize" style="font-weight: 200; font-size: 48px; text-transform: capitalize;">Telegram</span>
+                <span class="inline-flex items-end gap-2">
+                <span class="text-black tracking-wide leading-tight capitalize text-[22px] sm:text-[26px] md:text-[32px] lg:text-[40px] xl:text-[50px]" style="font-weight: 200; text-transform: capitalize;">Telegram</span>
                 <svg class="w-10 h-10 sm:w-12 sm:h-12 text-black shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
                 </svg>
@@ -352,12 +399,12 @@
               </span>
               </div>
             </div>
-            <!-- Part 2: Top-right - LinkedIn (block centered, text right-aligned) -->
-            <div class="absolute left-1/2 top-0 w-1/2 h-1/2 flex items-center justify-center p-6">
+            <!-- Part 2: Top-right - LinkedIn (content block centered in quadrant) -->
+            <div class="absolute left-1/2 top-0 w-1/2 h-1/2 flex flex-col items-center justify-center p-6">
               <div class="flex flex-col items-end gap-3 text-right">
                 <span class="text-black uppercase tracking-wide leading-tight" style="font-weight: 100; font-size: 24px; text-transform: uppercase;">JOIN OUR</span>
-                <span class="inline-flex items-center gap-2">
-                <span class="text-black tracking-wide leading-tight capitalize" style="font-weight: 200; font-size: 48px; text-transform: capitalize;">LinkedIn</span>
+                <span class="inline-flex items-end gap-2">
+                <span class="text-black tracking-wide leading-tight capitalize text-[22px] sm:text-[26px] md:text-[32px] lg:text-[40px] xl:text-[50px]" style="font-weight: 200; text-transform: capitalize;">LinkedIn</span>
                 <svg class="w-10 h-10 sm:w-12 sm:h-12 text-black shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
                   <rect x="2" y="9" width="4" height="12" rx="1"/>
@@ -369,12 +416,12 @@
               </span>
               </div>
             </div>
-            <!-- Part 3: Bottom-left - Twitter (block centered, text left-aligned) -->
-            <div class="absolute left-0 top-1/2 w-1/2 h-1/2 flex items-center justify-center p-6">
+            <!-- Part 3: Bottom-left - Twitter (content block centered in quadrant) -->
+            <div class="absolute left-0 top-1/2 w-1/2 h-1/2 flex flex-col items-center justify-center p-6">
               <div class="flex flex-col items-start gap-3 text-left">
                 <span class="text-black uppercase tracking-wide leading-tight" style="font-weight: 100; font-size: 24px; text-transform: uppercase;">FOLLOW OUR</span>
-                <span class="inline-flex items-center gap-2">
-                  <span class="text-black tracking-wide leading-tight capitalize" style="font-weight: 200; font-size: 48px; text-transform: capitalize;">Twitter</span>
+                <span class="inline-flex items-end gap-2">
+                  <span class="text-black tracking-wide leading-tight capitalize text-[22px] sm:text-[26px] md:text-[32px] lg:text-[40px] xl:text-[50px]" style="font-weight: 200; text-transform: capitalize;">Twitter</span>
                   <svg class="w-10 h-10 sm:w-12 sm:h-12 text-black shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                   </svg>
@@ -384,12 +431,12 @@
                 </span>
               </div>
             </div>
-            <!-- Part 4: Bottom-right - Contact (block centered, text right-aligned) -->
-            <div class="absolute left-1/2 top-1/2 w-1/2 h-1/2 flex items-center justify-center p-6">
+            <!-- Part 4: Bottom-right - Contact (content block centered in quadrant) -->
+            <div class="absolute left-1/2 top-1/2 w-1/2 h-1/2 flex flex-col items-center justify-center p-6">
               <div class="flex flex-col items-end gap-3 text-right">
                 <span class="text-black uppercase tracking-wide leading-tight" style="font-weight: 100; font-size: 24px; text-transform: uppercase;">DROP US A MESSAGE</span>
-                <span class="inline-flex items-center gap-2">
-                  <span class="text-black tracking-wide leading-tight capitalize" style="font-weight: 200; font-size: 48px; text-transform: capitalize;">Contact</span>
+                <span class="inline-flex items-end gap-2">
+                  <span class="text-black tracking-wide leading-tight capitalize text-[22px] sm:text-[26px] md:text-[32px] lg:text-[40px] xl:text-[50px]" style="font-weight: 200; text-transform: capitalize;">Contact</span>
                   <svg class="w-10 h-10 sm:w-12 sm:h-12 text-black shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                     <polyline points="22,6 12,13 2,6"/>
