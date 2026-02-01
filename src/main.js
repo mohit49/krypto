@@ -1,15 +1,79 @@
 import './style.css'
 
-// Mobile menu toggle functionality
+// Mobile menu: side panel slides in from right
 document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+  function openMobileMenu() {
+    if (!mobileMenu || !mobileMenuBackdrop) return;
+    mobileMenu.classList.remove('translate-x-full');
+    mobileMenu.classList.add('translate-x-0');
+    mobileMenuBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+    mobileMenuBackdrop.classList.add('opacity-100', 'pointer-events-auto');
+    document.body.classList.add('overflow-hidden');
+    mobileMenuButton?.setAttribute('aria-expanded', 'true');
+    mobileMenuBackdrop.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeMobileMenu() {
+    if (!mobileMenu || !mobileMenuBackdrop) return;
+    mobileMenu.classList.add('translate-x-full');
+    mobileMenu.classList.remove('translate-x-0');
+    mobileMenuBackdrop.classList.add('opacity-0', 'pointer-events-none');
+    mobileMenuBackdrop.classList.remove('opacity-100', 'pointer-events-auto');
+    document.body.classList.remove('overflow-hidden');
+    mobileMenuButton?.setAttribute('aria-expanded', 'false');
+    mobileMenuBackdrop.setAttribute('aria-hidden', 'true');
+  }
 
   if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+      const isOpen = mobileMenu.classList.contains('translate-x-0');
+      if (isOpen) closeMobileMenu();
+      else openMobileMenu();
     });
   }
+  if (mobileMenuBackdrop) {
+    mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
+  }
+  if (mobileMenuClose) {
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+  }
+
+  // Mobile menu accordion: one section open at a time, chevron beside text
+  document.querySelectorAll('.mobile-accordion-head').forEach((head) => {
+    head.addEventListener('click', () => {
+      const bodyId = head.getAttribute('aria-controls');
+      const body = bodyId ? document.getElementById(bodyId) : null;
+      const isExpanded = head.getAttribute('aria-expanded') === 'true';
+      const chevron = head.querySelector('.mobile-accordion-chevron');
+      // Close any other open section
+      document.querySelectorAll('.mobile-accordion-head').forEach((h) => {
+        if (h !== head) {
+          h.setAttribute('aria-expanded', 'false');
+          const id = h.getAttribute('aria-controls');
+          const b = id ? document.getElementById(id) : null;
+          if (b) b.classList.add('hidden');
+          const ch = h.querySelector('.mobile-accordion-chevron');
+          if (ch) ch.classList.remove('rotate-90');
+        }
+      });
+      if (body) {
+        if (isExpanded) {
+          head.setAttribute('aria-expanded', 'false');
+          body.classList.add('hidden');
+          if (chevron) chevron.classList.remove('rotate-90');
+        } else {
+          head.setAttribute('aria-expanded', 'true');
+          body.classList.remove('hidden');
+          if (chevron) chevron.classList.add('rotate-90');
+        }
+      }
+    });
+  });
 
   // Solution accordion – one open at a time, toggle icon
   const accordion = document.querySelector('.solution-accordion');
@@ -138,9 +202,9 @@ document.addEventListener('DOMContentLoaded', () => {
           behavior: 'smooth',
           block: 'start'
         });
-        // Close mobile menu if open
-        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.add('hidden');
+        // Close mobile menu if open (side panel)
+        if (mobileMenu && mobileMenu.classList.contains('translate-x-0')) {
+          closeMobileMenu();
         }
       }
     });
@@ -545,7 +609,7 @@ function updateTimeAndMode() {
   }
   
   if (modeElement) {
-    modeElement.textContent = `Mode: ${mode}`;
+    modeElement.textContent = mode;
   }
 }
 

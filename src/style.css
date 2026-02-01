@@ -62,9 +62,9 @@
   background-size: 20px 20px;
 }
 
-/* Solution Overview heading – grid rectangle background */
+/* Solution Overview heading – grid outline only (no fill) */
 .solution-overview-grid-bg {
-  background-color: rgba(209, 208, 208, 0.2);
+  background-color: transparent;
   background-image: 
     linear-gradient(to right, #d1d0d0 1px, transparent 1px),
     linear-gradient(to bottom, #d1d0d0 1px, transparent 1px);
@@ -79,6 +79,73 @@
   position: sticky;
   transition: top 0.5s ease-out;
 }
+/* First section: restore desktop (xl) absolute positioning for left/right panels */
+@media (min-width: 1280px) {
+  #hero-section #hero-left-panel {
+    position: absolute !important;
+    bottom: 1rem;
+    left: 1.5rem;
+    width: 300px;
+    max-width: 300px;
+    text-align: left;
+    display: block;
+    padding: 0;
+  }
+  @media (min-width: 768px) {
+    #hero-section #hero-left-panel {
+      left: 3rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    #hero-section #hero-left-panel {
+      left: 4rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    #hero-section #hero-left-panel {
+      left: 6rem;
+    }
+  }
+  #hero-section #hero-right-panel {
+    position: absolute !important;
+    bottom: 1rem;
+    right: 1.5rem;
+    width: 300px;
+    max-width: 300px;
+    text-align: left;
+    display: block;
+    padding: 0;
+    align-items: flex-start;
+  }
+  @media (min-width: 768px) {
+    #hero-section #hero-right-panel {
+      right: 3rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    #hero-section #hero-right-panel {
+      right: 4rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    #hero-section #hero-right-panel {
+      right: 6rem;
+    }
+  }
+  @media (min-width: 1367px) {
+    #hero-section #hero-left-panel,
+    #hero-section #hero-right-panel {
+      bottom: 4rem;
+    }
+  }
+  @media (min-width: 1367px) and (min-width: 1024px) {
+    #hero-section #hero-left-panel,
+    #hero-section #hero-right-panel {
+      bottom: 6rem;
+    }
+  }
+}
+
 /* First section responsive adjustments for 1366px screens */
 @media (max-width: 1366px) {
   #hero-content-wrapper {
@@ -90,9 +157,7 @@
   #hero-section h2 {
     font-size: 28px !important;
   }
-  #hero-section p {
-    font-size: 18px !important;
-  }
+ 
   #hero-section .text-lg,
   #hero-section .text-xl {
     font-size: 18px !important;
@@ -116,6 +181,12 @@
 }
 .solution-tile.active .tile-number {
   font-size: 200px;
+}
+@media (max-width: 767px) {
+  .solution-tile .tile-number,
+  .solution-tile.active .tile-number {
+    font-size: 20px;
+  }
 }
 
 /* Solution accordion - 90% width, 20px border radius (legacy, kept for reference) */
