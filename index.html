@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logino - Modern Web App</title>
+    <link rel="stylesheet" href="https://use.typekit.net/ion1ndn.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script type="module" src="/src/main.js"></script>
+</head>
+<body class="bg-[#262626] h-full m-0 p-[15px]">
+    <!-- First Section - Full Screen with Header (mouse parallax only when in view) -->
+    <section id="hero-section" class="w-full h-screen flex flex-col bg-white rounded-[20px] relative overflow-hidden">
+        <!-- Perspective Grid Background -->
+        <div class="perspective-grid">
+            <canvas id="perspective-canvas"></canvas>
+        </div>
+
+        <!-- Header -->
+        <header class="w-full relative z-20">
+            <nav class="w-full px-8 md:px-12 lg:px-16 xl:px-24 py-4">
+                <div class="flex items-center justify-between">
+                    <!-- Logo - Left End -->
+                    <div class="flex items-center">
+                        <a href="#" class="flex items-center">
+                            <img src="/assets/Unova.png" alt="Unova Logo" class="h-16 w-auto">
+                        </a>
+                    </div>
+
+                    <!-- Menu - Center -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-base md:text-lg lg:text-xl uppercase">About</a>
+                        <a href="#solution" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-base md:text-lg lg:text-xl uppercase">Solution</a>
+                        <a href="#community" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-base md:text-lg lg:text-xl uppercase">Community</a>
+                        <a href="#build" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-base md:text-lg lg:text-xl uppercase">Build</a>
+                    </div>
+
+                    <!-- Buttons - Right End -->
+                    <div class="hidden md:flex items-center space-x-4">
+                        <button class="px-10 py-6 bg-[#262626] text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 font-bold">
+                            Build on Unova
+                        </button>
+                        <button class="px-8 py-6 scroll-py-6 bg-[#262626] text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 font-bold flex items-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile menu -->
+                <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                    <div class="flex flex-col space-y-4">
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-base uppercase">About</a>
+                        <a href="#solution" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-base uppercase">Solution</a>
+                        <a href="#community" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-base uppercase">Community</a>
+                        <a href="#build" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-base uppercase">Build</a>
+                        <div class="flex flex-col space-y-2 pt-4">
+                            <button class="px-8 py-3 bg-[#262626] text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 font-bold">
+                                Build on Unova
+                            </button>
+                            <button class="px-8 py-3 bg-[#262626] text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 font-bold flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Content -->
+        <div class="absolute top-[20%] left-1/2 -translate-x-1/2 z-20 w-[65%]">
+            <div class="w-full hero-content">
+                <img id="unova-center-image" src="/assets/unova-center-text.png" alt="Unova" class="w-full h-auto mx-auto">
+            </div>
+        </div>
+
+        <!-- DJ Image at Bottom -->
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 h-[70vh]" style="perspective: 1000px;">
+            <img id="dj-center-image" src="/assets/ceter-dj.png" alt="DJ" class="h-full w-auto">
+        </div>
+
+        <!-- Left Bottom Text -->
+        <div class="absolute bottom-16 md:bottom-20 lg:bottom-24 left-8 md:left-12 lg:left-16 xl:left-24 z-20 max-w-md lg:max-w-lg">
+            <h2 class="text-2xl md:text-3xl lg:text-[40px] font-bold text-gray-900 mb-4 leading-tight">
+                Unova is a hybrid blockchain
+            </h2>
+            <p class="text-base md:text-lg lg:text-[26px] text-gray-500" style="font-weight: 300; line-height: 1.4;">
+                that automates trust and verifies business data via smart contracts, ensuring privacy without relying on central authorities.
+            </p>
+        </div>
+
+        <!-- Right Bottom Content -->
+        <div class="absolute bottom-16 md:bottom-20 lg:bottom-24 right-8 md:right-12 lg:right-16 xl:right-24 z-20">
+            <!-- Email Icon -->
+            <div class="mb-6 inline-flex">
+                <div class="w-16 h-16 rounded-full bg-gray-900 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Main Text -->
+            <p class="text-lg md:text-xl lg:text-[25px] font-bold text-gray-900 mb-6 leading-tight">
+                Interested in building<br>on Unova?
+            </p>
+            
+            <!-- Get in touch Text -->
+            <p class="text-lg md:text-xl lg:text-[25px] font-bold text-gray-900 mb-4">
+                Get in touch
+            </p>
+            
+            <!-- Social Icons -->
+            <div class="flex items-center space-x-4 mb-6">
+                <!-- Twitter -->
+                <a href="#" class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                
+                <!-- LinkedIn -->
+                <a href="#" class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                
+                <!-- Telegram -->
+                <a href="#" class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors">
+                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M23.1117 4.49449C23.4296 2.94472 21.9074 1.65683 20.4317 2.227L2.3425 9.21601C0.694517 9.85273 0.621087 12.1572 2.22518 12.8975L6.1645 14.7157L8.03849 21.2746C8.13583 21.6153 8.40618 21.8791 8.74917 21.968C9.09216 22.0568 9.45658 21.9576 9.70712 21.707L12.5938 18.8203L16.6375 21.8531C17.8113 22.7334 19.5019 22.0922 19.7967 20.6549L23.1117 4.49449ZM3.0633 11.0816L21.1525 4.0926L17.8375 20.2531L13.1 16.6999C12.7019 16.4013 12.1448 16.4409 11.7929 16.7928L10.5565 18.0292L10.928 15.9861L18.2071 8.70703C18.5614 8.35278 18.5988 7.79106 18.2947 7.39293C17.9906 6.99479 17.4389 6.88312 17.0039 7.13168L6.95124 12.876L3.0633 11.0816ZM8.17695 14.4791L8.78333 16.6015L9.01614 15.321C9.05253 15.1209 9.14908 14.9366 9.29291 14.7928L11.5128 12.573L8.17695 14.4791Z" fill="white"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Time and Mode Display -->
+            <div class="flex items-center text-lg md:text-xl lg:text-[25px] text-gray-900">
+                <span id="current-time" style="font-weight: 100;">00:00:00</span>
+                <span class="mx-3 font-bold">|</span>
+                <span id="day-night-mode" class="font-bold">Mode: Day</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Section - Auto height to fit accordion -->
+    <section class="w-full h-auto flex flex-col bg-white rounded-[20px] relative overflow-hidden mt-[15px] px-8 py-10">
+        <div class="w-[95%] mx-auto">
+        <!-- Solution Overview + Accordion (heading first, accordion below) -->
+       
+            <!-- Heading -->
+            <div class="relative inline-block mb-8 md:mb-10 z-10 ml-[5%]">
+                <div class="solution-overview-grid-bg absolute rounded-sm" style="width: 300px; height: 95%; left: 0; top: 0; z-index: 0;"></div>
+                <h1 class="relative z-10 text-5xl md:text-7xl lg:text-[100px] text-gray-900 leading-none" style="font-weight: 200;">
+                    Solution<br>Overview
+                </h1>
+            </div>
+
+            <!-- Accordion - 90% width, 20px border radius, below heading -->
+            <div class="solution-accordion w-full rounded-[20px] overflow-hidden border border-gray-200/20">
+                <div class="accordion-item" data-bg="#262626">
+                    <button type="button" class="accordion-header w-full text-left p-6 text-white font-bold flex items-center justify-between transition-colors" aria-expanded="true" aria-controls="accordion-panel-1" id="accordion-trigger-1">
+                        <span class="accordion-title flex items-baseline gap-3 flex-wrap"><span class="accordion-number">01</span> Coordination - Sovereignty - Trust</span>
+                    </button>
+                    <div id="accordion-panel-1" class="accordion-panel" role="region" aria-labelledby="accordion-trigger-1">
+                        <div class="accordion-content p-6 pt-0 text-white text-[35px] leading-snug">
+                            Today's coordination systems were not built for multi-party reality. They force organizations to: hand over control of proprietary data, rely on trusted intermediaries and audits, reconcile fragmented processes across systems, and accept limited automation beyond organizational boundaries. Blockchains remove intermediaries, but most were built for crypto-native use cases and fail to support privacy, scalability, and real-world execution.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" data-bg="#1598f8">
+                    <button type="button" class="accordion-header w-full text-left p-6 text-white font-bold flex items-center justify-between transition-colors" aria-expanded="false" aria-controls="accordion-panel-2" id="accordion-trigger-2">
+                        <span class="accordion-title flex items-baseline gap-3 flex-wrap"><span class="accordion-number">02</span> Integration · Decentralization · Mobility</span>
+                    </button>
+                    <div id="accordion-panel-2" class="accordion-panel accordion-panel-closed" role="region" aria-labelledby="accordion-trigger-2">
+                        <div class="accordion-content p-6 pt-0 text-white text-[35px] leading-snug">
+                            Today's coordination systems were not built for multi-party reality. They force organizations to: hand over control of proprietary data, rely on trusted intermediaries and audits, reconcile fragmented processes across systems, and accept limited automation beyond organizational boundaries. Blockchains remove intermediaries, but most were built for crypto-native use cases and fail to support privacy, scalability, and real-world execution.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" data-bg="#0053ff">
+                    <button type="button" class="accordion-header w-full text-left p-6 text-white font-bold flex items-center justify-between transition-colors" aria-expanded="false" aria-controls="accordion-panel-3" id="accordion-trigger-3">
+                        <span class="accordion-title flex items-baseline gap-3 flex-wrap"><span class="accordion-number">03</span> Privacy · Control · Verification</span>
+                    </button>
+                    <div id="accordion-panel-3" class="accordion-panel accordion-panel-closed" role="region" aria-labelledby="accordion-trigger-3">
+                        <div class="accordion-content p-6 pt-0 text-white text-[35px] leading-snug">
+                            Today's coordination systems were not built for multi-party reality. They force organizations to: hand over control of proprietary data, rely on trusted intermediaries and audits, reconcile fragmented processes across systems, and accept limited automation beyond organizational boundaries. Blockchains remove intermediaries, but most were built for crypto-native use cases and fail to support privacy, scalability, and real-world execution.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" data-bg="#c0d4ff">
+                    <button type="button" class="accordion-header w-full text-left p-6 text-gray-900 font-bold flex items-center justify-between transition-colors" aria-expanded="false" aria-controls="accordion-panel-4" id="accordion-trigger-4">
+                        <span class="accordion-title flex items-baseline gap-3 flex-wrap"><span class="accordion-number">04</span> Unova Community</span>
+                    </button>
+                    <div id="accordion-panel-4" class="accordion-panel accordion-panel-closed" role="region" aria-labelledby="accordion-trigger-4">
+                        <div class="accordion-content p-6 pt-0 text-gray-900 text-[35px] leading-snug">
+                            Today's coordination systems were not built for multi-party reality. They force organizations to: hand over control of proprietary data, rely on trusted intermediaries and audits, reconcile fragmented processes across systems, and accept limited automation beyond organizational boundaries. Blockchains remove intermediaries, but most were built for crypto-native use cases and fail to support privacy, scalability, and real-world execution.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+    </section>
+    <section class="w-full h-auto flex flex-col bg-white rounded-[20px] relative overflow-hidden mt-[15px] px-8 py-10">
+        <div class="w-[95%] mx-auto">
+        <!-- Third Section: Unova Solutions -->
+       
+            <!-- Heading -->
+            <div class="relative inline-block mb-8 md:mb-10 z-10 ml-[5%]">
+                <div class="solution-overview-grid-bg absolute rounded-sm" style="width: 300px; height: 95%; left: 0; top: 0; z-index: 0;"></div>
+                <h1 class="relative z-10 text-5xl md:text-7xl lg:text-[100px] text-gray-900 leading-none" style="font-weight: 200;">
+                    Unova<br>Solutions
+                </h1>
+            </div>
+
+            <p class="mt-6 md:mt-8 text-[26px] text-gray-600 leading-relaxed ml-[5%] font-extralight">
+                Unova empowers founders, enterprises, and institutions across industries to build decentralized applications that coordinate real-world data, logic, and execution. Designed for both Web2 and Web3 environments, Unova enables builders to retain full control while leveraging privacy-enabled data transmission, scalable execution, and an open ecosystem for innovation.
+            </p>
+
+            <!-- Side panel + content (responsive: stack on small, side-by-side on md+) -->
+            <div class="mt-12 flex flex-col md:flex-row gap-6 md:gap-10 lg:gap-12 ml-0 md:ml-[5%] w-full max-w-full md:max-w-[95%]">
+                <nav class="solutions-sidepanel shrink-0 w-full md:w-96 lg:w-[28rem] xl:w-[32rem]" aria-label="Solutions">
+                    <ul class="space-y-1">
+                        <li><button type="button" class="solutions-tab text-left w-full py-1 text-[18px] sm:text-[22px] md:text-[26px] font-medium text-gray-400 hover:text-gray-700 transition-colors uppercase active" data-tab="supply-chain">Supply Chain</button></li>
+                        <li><button type="button" class="solutions-tab text-left w-full py-1 text-[18px] sm:text-[22px] md:text-[26px] font-medium text-gray-400 hover:text-gray-700 transition-colors uppercase" data-tab="defi">Decentralized Finance</button></li>
+                        <li><button type="button" class="solutions-tab text-left w-full py-1 text-[18px] sm:text-[22px] md:text-[26px] font-medium text-gray-400 hover:text-gray-700 transition-colors uppercase" data-tab="rwa">Real World Assets</button></li>
+                        <li><button type="button" class="solutions-tab text-left w-full py-1 text-[18px] sm:text-[22px] md:text-[26px] font-medium text-gray-400 hover:text-gray-700 transition-colors uppercase" data-tab="nfts">NFTs</button></li>
+                        <li><button type="button" class="solutions-tab text-left w-full py-1 text-[18px] sm:text-[22px] md:text-[26px] font-medium text-gray-400 hover:text-gray-700 transition-colors uppercase" data-tab="compliance">Regulation and compliance</button></li>
+                        <li><button type="button" class="solutions-tab text-left w-full py-1 text-[18px] sm:text-[22px] md:text-[26px] font-medium text-gray-400 hover:text-gray-700 transition-colors uppercase" data-tab="ai">AI - driven Automation</button></li>
+                        <li><button type="button" class="solutions-tab text-left w-full py-1 text-[18px] sm:text-[22px] md:text-[26px] font-medium text-gray-400 hover:text-gray-700 transition-colors uppercase" data-tab="smart-contracts">Smart Contracts</button></li>
+                        <li><button type="button" class="solutions-tab text-left w-full py-1 text-[18px] sm:text-[22px] md:text-[26px] font-medium text-gray-400 hover:text-gray-700 transition-colors uppercase" data-tab="incubator">Unova Incubator Hub</button></li>
+                    </ul>
+                </nav>
+                <div class="solutions-content flex-1 min-w-0 w-full rounded-lg border-2 border-black bg-gray-50/50 p-4 sm:p-6 md:p-8" id="solutions-content">
+                    <div class="solutions-panel active" id="panel-supply-chain" role="tabpanel">
+                        <img src="/assets/Vector-Smart-Object.png" alt="Supply chain illustration" class="w-full h-auto mb-6 rounded-lg">
+                        <h3 class="text-[30px] font-semibold text-gray-900 mb-4 uppercase">Supply Chain</h3>
+                        <p class="text-[26px] text-gray-600 leading-relaxed">Coordinate supply networks using verified data without central platforms. Enable transparency and automation across multiple parties.</p>
+                        <div class="flex items-center gap-3 mt-6">
+                            <button type="button" class="h-12 px-6 flex items-center border-2 border-black text-black text-[24px] font-semibold rounded-lg hover:bg-black hover:text-white transition-colors">Know more</button>
+                            <button type="button" class="w-12 h-12 flex items-center justify-center border-2 border-black rounded-lg hover:bg-black hover:text-white transition-colors" aria-label="Open link">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7v6m0-6h-6"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="solutions-panel hidden" id="panel-defi" role="tabpanel">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4 uppercase">Decentralized Finance</h3>
+                        <p class="text-gray-600 leading-relaxed">Content for Decentralized Finance. Replace with your copy.</p>
+                    </div>
+                    <div class="solutions-panel hidden" id="panel-rwa" role="tabpanel">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4 uppercase">Real World Assets</h3>
+                        <p class="text-gray-600 leading-relaxed">Content for Real World Assets. Replace with your copy.</p>
+                    </div>
+                    <div class="solutions-panel hidden" id="panel-nfts" role="tabpanel">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4 uppercase">NFTs</h3>
+                        <p class="text-gray-600 leading-relaxed">Content for NFTs. Replace with your copy.</p>
+                    </div>
+                    <div class="solutions-panel hidden" id="panel-compliance" role="tabpanel">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4 uppercase">Regulation and compliance</h3>
+                        <p class="text-gray-600 leading-relaxed">Content for Regulation and compliance. Replace with your copy.</p>
+                    </div>
+                    <div class="solutions-panel hidden" id="panel-ai" role="tabpanel">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4 uppercase">AI - driven Automation</h3>
+                        <p class="text-gray-600 leading-relaxed">Content for AI-driven Automation. Replace with your copy.</p>
+                    </div>
+                    <div class="solutions-panel hidden" id="panel-smart-contracts" role="tabpanel">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4 uppercase">Smart Contracts</h3>
+                        <p class="text-gray-600 leading-relaxed">Content for Smart Contracts. Replace with your copy.</p>
+                    </div>
+                    <div class="solutions-panel hidden" id="panel-incubator" role="tabpanel">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4 uppercase">Unova Incubator Hub</h3>
+                        <p class="text-gray-600 leading-relaxed">Content for Unova Incubator Hub. Replace with your copy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+    </section>
+
+    <!-- Fourth Section: Join the Unova Community -->
+    <section class="w-full h-auto flex flex-col bg-white rounded-[20px] relative mt-[15px] py-10 overflow-hidden">
+        <!-- Three parallel vertical lines: 500px gap between each -->
+        <span class="absolute top-0 bottom-0 w-px bg-[#e4e4e4] z-20 pointer-events-none -translate-x-1/2" style="left: calc(50% - 500px)" aria-hidden="true"></span>
+        <span class="absolute left-1/2 top-0 bottom-0 w-px bg-[#e4e4e4] -translate-x-1/2 z-20 pointer-events-none" aria-hidden="true"></span>
+        <span class="absolute top-0 bottom-0 w-px bg-[#e4e4e4] z-20 pointer-events-none -translate-x-1/2" style="left: calc(50% + 500px)" aria-hidden="true"></span>
+        <div class="w-[95%] mx-auto relative z-10">
+            <!-- Heading -->
+            <div class="relative inline-block mb-8 md:mb-10 z-10 ml-[5%]">
+                <div class="solution-overview-grid-bg absolute rounded-sm" style="width: 600px; height: 95%; left: 0; top: 0; z-index: 0;"></div>
+                <h1 class="relative z-10 text-5xl md:text-7xl lg:text-[100px] text-gray-900 leading-none" style="font-weight: 200;">
+                    Join the<br>Unova Community
+                </h1>
+            </div>
+        </div>
+
+        <!-- Swiper slider: outside container, left aligned with heading (2.5% + 5% of 95%) -->
+        <div class="community-swiper-wrap relative z-30 mt-4 w-full ml-[7.25%]">
+        <div class="community-swiper swiper w-full">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="/assets/twitter-card.png" alt="Unova Community" class="w-full h-auto object-cover rounded-lg"></div>
+                <div class="swiper-slide"><img src="/assets/twitter-card.png" alt="Unova Community" class="w-full h-auto object-cover rounded-lg"></div>
+                <div class="swiper-slide"><img src="/assets/twitter-card.png" alt="Unova Community" class="w-full h-auto object-cover rounded-lg"></div>
+                <div class="swiper-slide"><img src="/assets/twitter-card.png" alt="Unova Community" class="w-full h-auto object-cover rounded-lg"></div>
+                <div class="swiper-slide"><img src="/assets/twitter-card.png" alt="Unova Community" class="w-full h-auto object-cover rounded-lg"></div>
+            </div>
+        </div>
+        <div class="community-swiper-nav absolute bottom-4 w-[200px] right-[20%] flex items-center gap-2 z-10">
+          <button type="button" class="community-swiper-prev w-12 h-12 flex items-center justify-center rounded-full border-2 border-black bg-white hover:bg-black hover:text-white transition-colors" aria-label="Previous">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button type="button" class="community-swiper-next w-12 h-12 flex items-center justify-center rounded-full border-2 border-black bg-white hover:bg-black hover:text-white transition-colors" aria-label="Next">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+        </div>
+
+        <!-- Square below slider: 1000px -->
+        <div class="relative z-30 w-full max-w-[1280px] mx-auto px-6 sm:px-8 mt-12 md:mt-16 flex justify-center">
+          <div class="group relative w-[1000px] h-[1000px] border-l border-r border-[#e4e4e4] shrink-0 cursor-default">
+            <!-- Vertical and horizontal center lines -->
+            <span class="absolute left-0 right-0 top-1/2 h-px bg-[#e4e4e4] -translate-y-1/2" aria-hidden="true"></span>
+            <span class="absolute left-1/2 top-0 bottom-0 w-px bg-[#e4e4e4] -translate-x-1/2" aria-hidden="true"></span>
+            <img src="/assets/center-logo.png" alt="" class="absolute left-1/2 top-1/2 z-10 w-auto h-auto max-w-[80%] max-h-[80%] -translate-x-1/2 -translate-y-1/2 object-contain transition-transform duration-300 ease-out group-hover:scale-110" />
+            <!-- Part 1: Top-left - Telegram (block centered, text left-aligned) -->
+            <div class="absolute left-0 top-0 w-1/2 h-1/2 flex items-center justify-center p-6">
+              <div class="flex flex-col items-start gap-3 text-left">
+                <span class="text-black uppercase tracking-wide leading-tight" style="font-weight: 100; font-size: 24px; text-transform: uppercase;">JOIN OUR</span>
+                <span class="inline-flex items-center gap-2">
+                <span class="text-black tracking-wide leading-tight capitalize" style="font-weight: 200; font-size: 48px; text-transform: capitalize;">Telegram</span>
+                <svg class="w-10 h-10 sm:w-12 sm:h-12 text-black shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+                <svg class="w-6 h-6 sm:w-8 sm:h-8 text-black shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </span>
+              </div>
+            </div>
+            <!-- Part 2: Top-right - LinkedIn (block centered, text right-aligned) -->
+            <div class="absolute left-1/2 top-0 w-1/2 h-1/2 flex items-center justify-center p-6">
+              <div class="flex flex-col items-end gap-3 text-right">
+                <span class="text-black uppercase tracking-wide leading-tight" style="font-weight: 100; font-size: 24px; text-transform: uppercase;">JOIN OUR</span>
+                <span class="inline-flex items-center gap-2">
+                <span class="text-black tracking-wide leading-tight capitalize" style="font-weight: 200; font-size: 48px; text-transform: capitalize;">LinkedIn</span>
+                <svg class="w-10 h-10 sm:w-12 sm:h-12 text-black shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12" rx="1"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+                <svg class="w-6 h-6 sm:w-8 sm:h-8 text-black shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </span>
+              </div>
+            </div>
+            <!-- Part 3: Bottom-left - Twitter (block centered, text left-aligned) -->
+            <div class="absolute left-0 top-1/2 w-1/2 h-1/2 flex items-center justify-center p-6">
+              <div class="flex flex-col items-start gap-3 text-left">
+                <span class="text-black uppercase tracking-wide leading-tight" style="font-weight: 100; font-size: 24px; text-transform: uppercase;">FOLLOW OUR</span>
+                <span class="inline-flex items-center gap-2">
+                  <span class="text-black tracking-wide leading-tight capitalize" style="font-weight: 200; font-size: 48px; text-transform: capitalize;">Twitter</span>
+                  <svg class="w-10 h-10 sm:w-12 sm:h-12 text-black shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                  <svg class="w-6 h-6 sm:w-8 sm:h-8 text-black shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <!-- Part 4: Bottom-right - Contact (block centered, text right-aligned) -->
+            <div class="absolute left-1/2 top-1/2 w-1/2 h-1/2 flex items-center justify-center p-6">
+              <div class="flex flex-col items-end gap-3 text-right">
+                <span class="text-black uppercase tracking-wide leading-tight" style="font-weight: 100; font-size: 24px; text-transform: uppercase;">DROP US A MESSAGE</span>
+                <span class="inline-flex items-center gap-2">
+                  <span class="text-black tracking-wide leading-tight capitalize" style="font-weight: 200; font-size: 48px; text-transform: capitalize;">Contact</span>
+                  <svg class="w-10 h-10 sm:w-12 sm:h-12 text-black shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                  <svg class="w-6 h-6 sm:w-8 sm:h-8 text-black shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof Swiper !== 'undefined') {
+          var communitySwiper = new Swiper('.community-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 40,
+            loop: true,
+            speed: 500,
+            cssMode: false,
+            pagination: false,
+            navigation: { nextEl: '.community-swiper-next', prevEl: '.community-swiper-prev' },
+            breakpoints: { 640: { slidesPerView: 2.2 }, 768: { slidesPerView: 3.2 }, 1024: { slidesPerView: 3.5 } },
+            on: {
+              init: function() { var s = this; requestAnimationFrame(function() { setCommunitySlideScale(s); }); },
+              slideChangeTransitionEnd: function() { setCommunitySlideScale(this); },
+              transitionEnd: function() { setCommunitySlideScale(this); }
+            }
+          });
+          function setCommunitySlideScale(swiper) {
+            var container = swiper.el.getBoundingClientRect();
+            var slides = Array.from(swiper.slides);
+            var withLeft = slides.map(function(slide) {
+              var r = slide.getBoundingClientRect();
+              return { slide: slide, left: r.left, right: r.right };
+            });
+            withLeft.sort(function(a, b) { return a.left - b.left; });
+            var startIndex = 0;
+            for (var i = 0; i < withLeft.length; i++) {
+              if (withLeft[i].right > container.left && withLeft[i].left < container.right) {
+                startIndex = i;
+                break;
+              }
+            }
+            withLeft.forEach(function(item, i) {
+              var slide = item.slide;
+              var pos = (i - startIndex + withLeft.length) % withLeft.length;
+              var p = Math.min(pos, 4);
+              var alt = p % 2 === 0 ? 'slide-alt-up' : 'slide-alt-down';
+              slide.className = slide.className.replace(/\bslide-pos-\d\b/g, '').replace(/\bslide-alt-(up|down)\b/g, '') + ' slide-pos-' + p + ' ' + alt;
+            });
+          }
+        }
+      });
+    </script>
+    <!-- Footer (no bg) -->
+    <footer class="w-full py-12 md:py-16">
+        <div class="w-[80%] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12 mb-12 md:mb-16">
+                <div>
+                    <h3 class="text-white font-semibold text-[25px] mb-4">About Unova</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">About Unova</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Foundation</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold text-[25px] mb-4">Solutions</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Decentralized Finance (DeFi)</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Enterprise & Consumer Apps (Supply Chain)</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Real World Assets (RWA)</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Privacy Data Transmission</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Infrastructure</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold text-[25px] mb-4">Community</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Telegram Community</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">X Community</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Ecosystem Builders</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Incubation Hub</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Events</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold text-[25px] mb-4">Build</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Developers</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Validator Nodes</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Grants</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Decentralized Applications (dApps)</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">The UON Token</a></li>
+                        <li><a href="#" class="text-[20px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Blockchain Explorer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center text-[#434343] text-[22px] pt-8">
+                Copyright © 2026 unova.io. All rights reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

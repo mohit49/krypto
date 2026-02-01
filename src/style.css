@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Proxima Nova Font Family Configuration */
+@layer base {
+  body {
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+/* One Point Perspective Grid Background */
+.perspective-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.perspective-grid canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure content is above the background */
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* Unova center image with smooth 3D parallax */
+#unova-center-image {
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.hero-content {
+  perspective: 1000px;
+}
+
+/* DJ center image with smooth 3D parallax */
+#dj-center-image {
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+/* Grid pattern background for text */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, #d1d0d0 1px, transparent 1px),
+    linear-gradient(to bottom, #d1d0d0 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Solution Overview heading – grid rectangle background */
+.solution-overview-grid-bg {
+  background-color: rgba(209, 208, 208, 0.2);
+  background-image: 
+    linear-gradient(to right, #d1d0d0 1px, transparent 1px),
+    linear-gradient(to bottom, #d1d0d0 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Solution accordion - 90% width, 20px border radius */
+.solution-accordion {
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.solution-accordion .accordion-item {
+  background-color: #262626;
+}
+
+.solution-accordion .accordion-item:nth-child(1) { background-color: #262626; }
+.solution-accordion .accordion-item:nth-child(2) { background-color: #1598f8; border-top-left-radius: 20px; border-top-right-radius: 20px; }
+.solution-accordion .accordion-item:nth-child(3) { background-color: #0053ff; border-top-left-radius: 20px; border-top-right-radius: 20px; }
+.solution-accordion .accordion-item:nth-child(4) { background-color: #c0d4ff; border-top-left-radius: 20px; border-top-right-radius: 20px; }
+
+.solution-accordion .accordion-item + .accordion-item {
+  margin-top: -15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.solution-accordion .accordion-item:nth-child(4) + .accordion-item,
+.solution-accordion .accordion-item:last-child {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Accordion heading: 40px when closed; number 150px when open */
+.solution-accordion .accordion-header {
+  font-size: 40px;
+}
+
+.solution-accordion .accordion-number {
+  font-size: 40px;
+  transition: font-size 0.3s ease;
+}
+
+.solution-accordion .accordion-item:has(.accordion-panel:not(.accordion-panel-closed)) .accordion-number {
+  font-size: 150px;
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* When open: header relative so number can be absolute; more padding top/bottom */
+.solution-accordion .accordion-item:has(.accordion-panel:not(.accordion-panel-closed)) .accordion-header {
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.solution-accordion .accordion-item:has(.accordion-panel:not(.accordion-panel-closed)) .accordion-title {
+  align-items: center;
+  padding-left: calc(150px + 4rem); /* space for absolute number + gap */
+}
+
+/* Accordion sub text: font weight 200 (light) */
+.solution-accordion .accordion-content {
+  font-weight: 200;
+}
+
+/* When open: align sub text with heading – same left as text after number; more padding; max-width so text wraps to ~5 lines */
+.solution-accordion .accordion-item:has(.accordion-panel:not(.accordion-panel-closed)) .accordion-content {
+  padding-left: calc(1.5rem + 150px + 4rem); /* header padding + number width + gap (matches open gap) */
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  margin-top: -0.75rem; /* pull sub text up so it lines just below heading */
+  max-width: 80%;
+}
+
+.accordion-header:hover {
+  opacity: 0.95;
+}
+
+.accordion-panel {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-panel-closed {
+  max-height: 0;
+}
+
+.accordion-panel:not(.accordion-panel-closed) {
+  max-height: 400px;
+}
+
+/* Solutions side panel: active tab dark black */
+.solutions-tab.active {
+  color: #000;
+  font-weight: 600;
+}
+
+.solutions-panel.active {
+  display: block;
+}
+
+.solutions-panel.hidden {
+  display: none;
+}
+
+/* Community Swiper: smooth transition for scale/position */
+.community-swiper .swiper-slide {
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Top-left zoomed (scale 1), first slide no vertical offset; rest zoom out and alternating up/down */
+.community-swiper .swiper-slide.slide-pos-0.slide-alt-up,
+.community-swiper .swiper-slide.slide-pos-0.slide-alt-down { transform: scale(1) translateY(0); }
+.community-swiper .swiper-slide.slide-pos-1.slide-alt-up { transform: scale(0.8) translateY(-12px); }
+.community-swiper .swiper-slide.slide-pos-1.slide-alt-down { transform: scale(0.8) translateY(12px); }
+.community-swiper .swiper-slide.slide-pos-2.slide-alt-up { transform: scale(0.7) translateY(-12px); transform-origin: left center; }
+.community-swiper .swiper-slide.slide-pos-2.slide-alt-down { transform: scale(0.7) translateY(12px); transform-origin: left center; }
+.community-swiper .swiper-slide.slide-pos-3.slide-alt-up,
+.community-swiper .swiper-slide.slide-pos-4.slide-alt-up { transform: scale(0.6) translateY(-12px); transform-origin: left center; }
+.community-swiper .swiper-slide.slide-pos-3.slide-alt-down,
+.community-swiper .swiper-slide.slide-pos-4.slide-alt-down { transform: scale(0.6) translateY(12px); transform-origin: left center; }
