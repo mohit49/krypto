@@ -77,7 +77,39 @@
 }
 .solution-tile {
   position: sticky;
+  transition: top 0.5s ease-out;
 }
+/* First section responsive adjustments for 1366px screens */
+@media (max-width: 1366px) {
+  #hero-content-wrapper {
+    width: 55% !important;
+  }
+  #dj-wrapper {
+    height: 62vh !important;
+  }
+  #hero-section h2 {
+    font-size: 28px !important;
+  }
+  #hero-section p {
+    font-size: 18px !important;
+  }
+  #hero-section .text-lg,
+  #hero-section .text-xl {
+    font-size: 18px !important;
+  }
+  /* Move bottom text containers higher to avoid DJ image overlap */
+  #hero-section .absolute.bottom-16,
+  #hero-section .absolute.bottom-20,
+  #hero-section .absolute.bottom-24 {
+    bottom: 70vh !important;
+  }
+  /* Reduce max-width of left text */
+  #hero-section .max-w-md,
+  #hero-section .max-w-lg {
+    max-width: 280px !important;
+  }
+}
+
 /* Tile number: small by default, large when active */
 .solution-tile .tile-number {
   font-size: 50px;

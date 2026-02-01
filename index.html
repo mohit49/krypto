@@ -80,14 +80,14 @@
         </header>
 
         <!-- Hero Content -->
-        <div class="absolute top-[20%] left-1/2 -translate-x-1/2 z-20 w-[65%]">
+        <div id="hero-content-wrapper" class="absolute top-[20%] left-1/2 -translate-x-1/2 z-20 w-[65%]">
             <div class="w-full hero-content">
                 <img id="unova-center-image" src="/assets/unova-center-text.png" alt="Unova" class="w-full h-auto mx-auto">
             </div>
         </div>
 
         <!-- DJ Image at Bottom -->
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 h-[70vh]" style="perspective: 1000px;">
+        <div id="dj-wrapper" class="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 h-[70vh]" style="perspective: 1000px;">
             <img id="dj-center-image" src="/assets/ceter-dj.png" alt="DJ" class="h-full w-auto">
         </div>
 
@@ -156,9 +156,9 @@
     </section>
 
     <!-- Second Section: Parallax scroll stack - tiles slide over each other -->
-    <div class="solution-parallax-wrapper w-full mt-[15px] bg-white rounded-[20px] px-8 py-10" style="height: 500vh;">
-        <!-- Heading: sticky, stays in place -->
-        <div class="sticky w-full bg-white rounded-[20px] px-8 py-10 pb-20" style="top: 0; z-index: 5;">
+    <div class="solution-parallax-wrapper w-full mt-[15px] bg-white rounded-[20px] px-8 pt-16 pb-10" style="height: 500vh;">
+        <!-- Heading: sticky, hides when tiles start scrolling -->
+        <div id="solution-heading" class="sticky w-full bg-white rounded-[20px] px-8 pt-6 pb-20 transition-opacity duration-500" style="top: 0; z-index: 5;">
             <div class="w-[95%] mx-auto">
                 <div class="relative inline-block mb-8 md:mb-10 ml-[5%]">
                     <div class="solution-overview-grid-bg absolute rounded-sm" style="width: 300px; height: 95%; left: 0; top: 0; z-index: 0;"></div>
@@ -169,8 +169,8 @@
             </div>
         </div>
         
-        <!-- Parallax tiles: each sticks with gap from top, previous content visible -->
-        <div class="solution-tile active sticky w-full bg-white rounded-[20px] overflow-hidden px-8 py-10 min-h-screen" style="z-index: 10; background-color: #262626; top: 280px;">
+        <!-- Parallax tiles: each sticks progressively lower, creating larger gaps -->
+        <div class="solution-tile active sticky w-full bg-white rounded-[20px] overflow-hidden px-8 pt-6 pb-10 min-h-screen" style="z-index: 10; background-color: #262626; top: 180px;" data-default-top="180">
             <div class="w-[95%] mx-auto">
                 <div class="flex items-baseline gap-3 flex-wrap text-white font-bold text-[40px] mb-6">
                     <span class="tile-number leading-none transition-all duration-300">01</span>
@@ -182,7 +182,7 @@
             </div>
         </div>
         
-        <div class="solution-tile sticky w-full bg-white rounded-[20px] overflow-hidden px-8 py-10 min-h-screen" style="z-index: 20; background-color: #1598f8; top: 280px;">
+        <div class="solution-tile sticky w-full bg-white rounded-[20px] overflow-hidden px-8 pt-6 pb-10 min-h-screen" style="z-index: 20; background-color: #1598f8; top: 280px;" data-default-top="280">
             <div class="w-[95%] mx-auto">
                 <div class="flex items-baseline gap-3 flex-wrap text-white font-bold text-[40px] mb-6">
                     <span class="tile-number leading-none transition-all duration-300">02</span>
@@ -194,7 +194,7 @@
             </div>
         </div>
         
-        <div class="solution-tile sticky w-full bg-white rounded-[20px] overflow-hidden px-8 py-10 min-h-screen" style="z-index: 30; background-color: #0053ff; top: 280px;">
+        <div class="solution-tile sticky w-full bg-white rounded-[20px] overflow-hidden px-8 pt-6 pb-10 min-h-screen" style="z-index: 30; background-color: #0053ff; top: 380px;" data-default-top="380">
             <div class="w-[95%] mx-auto">
                 <div class="flex items-baseline gap-3 flex-wrap text-white font-bold text-[40px] mb-6">
                     <span class="tile-number leading-none transition-all duration-300">03</span>
@@ -206,7 +206,7 @@
             </div>
         </div>
         
-        <div class="solution-tile sticky w-full bg-white rounded-[20px] overflow-hidden px-8 py-10 min-h-screen" style="z-index: 40; background-color: #c0d4ff; top: 280px;">
+        <div class="solution-tile sticky w-full bg-white rounded-[20px] overflow-hidden px-8 pt-6 pb-10 min-h-screen" style="z-index: 40; background-color: #c0d4ff; top: 480px;" data-default-top="480">
             <div class="w-[95%] mx-auto">
                 <div class="flex items-baseline gap-3 flex-wrap text-gray-900 font-bold text-[40px] mb-6">
                     <span class="tile-number leading-none transition-all duration-300 text-gray-900">04</span>
@@ -355,8 +355,8 @@
             </div>
         </div>
 
-        <!-- Swiper slider: outside container, left aligned with heading (2.5% + 5% of 95%) -->
-        <div class="community-swiper-wrap relative z-30 mt-4 w-full ml-[7.25%]">
+        <!-- Swiper slider: centered -->
+        <div class="community-swiper-wrap relative z-30 mt-4 w-[95%] mx-auto">
         <div class="community-swiper swiper w-full">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="/assets/twitter-card.png" alt="Unova Community" class="w-full h-auto object-cover rounded-lg"></div>

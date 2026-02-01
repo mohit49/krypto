@@ -58,7 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Section 2: Scroll-based active tile detection - simple and reliable
+  // Section 2: Scroll-based active tile detection + hide heading when tiles start
+  const solutionHeading = document.getElementById('solution-heading');
   const solutionTiles = document.querySelectorAll('.solution-tile');
   if (solutionTiles.length > 0) {
     let currentActiveTile = null;
@@ -87,6 +88,26 @@ document.addEventListener('DOMContentLoaded', () => {
             tile.classList.remove('active');
           }
         });
+      }
+      
+      // Hide heading and shift tiles up when first tile is visible/active
+      if (solutionHeading) {
+        const firstTile = solutionTiles[0];
+        const firstTileRect = firstTile ? firstTile.getBoundingClientRect() : null;
+        if (firstTileRect && firstTileRect.top <= 250) {
+          solutionHeading.style.opacity = '0';
+          // Shift tiles to top with gaps preserved
+          solutionTiles.forEach((tile, index) => {
+            tile.style.top = (index * 100) + 'px'; // 0px, 100px, 200px, 300px
+          });
+        } else {
+          solutionHeading.style.opacity = '1';
+          // Shift tiles back to default positions
+          solutionTiles.forEach(tile => {
+            const defaultTop = tile.getAttribute('data-default-top') || '200';
+            tile.style.top = defaultTop + 'px';
+          });
+        }
       }
     }
     
