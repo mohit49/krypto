@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "build:finals": "vite build",
+    "preview": "vite preview",
+    "preview:finals": "vite preview"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
