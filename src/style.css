@@ -71,7 +71,22 @@
   background-size: 20px 20px;
 }
 
-/* Solution accordion - 90% width, 20px border radius */
+/* Solution parallax: tiles stick and stack on scroll */
+.solution-parallax-wrapper {
+  position: relative;
+}
+.solution-tile {
+  position: sticky;
+}
+/* Tile number: small by default, large when active */
+.solution-tile .tile-number {
+  font-size: 50px;
+}
+.solution-tile.active .tile-number {
+  font-size: 200px;
+}
+
+/* Solution accordion - 90% width, 20px border radius (legacy, kept for reference) */
 .solution-accordion {
   border-radius: 20px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);

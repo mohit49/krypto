@@ -58,6 +58,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Section 2: Scroll-based active tile detection - simple and reliable
+  const solutionTiles = document.querySelectorAll('.solution-tile');
+  if (solutionTiles.length > 0) {
+    let currentActiveTile = null;
+    
+    function updateActiveTile() {
+      // Use top 40% of viewport as activation zone (280px stick point)
+      const activationPoint = window.innerHeight * 0.4;
+      let newActiveTile = null;
+      
+      // Find which tile is at the activation point (closest to sticky position)
+      solutionTiles.forEach(tile => {
+        const rect = tile.getBoundingClientRect();
+        // Check if tile is visible and near the activation point
+        if (rect.top <= activationPoint + 50 && rect.bottom > activationPoint) {
+          newActiveTile = tile;
+        }
+      });
+      
+      // Only update if active tile changed (prevents flicker)
+      if (newActiveTile && newActiveTile !== currentActiveTile) {
+        currentActiveTile = newActiveTile;
+        solutionTiles.forEach(tile => {
+          if (tile === currentActiveTile) {
+            tile.classList.add('active');
+          } else {
+            tile.classList.remove('active');
+          }
+        });
+      }
+    }
+    
+    // Throttle scroll events for better performance
+    let ticking = false;
+    function requestTileUpdate() {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateActiveTile();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+    
+    window.addEventListener('scroll', requestTileUpdate, { passive: true });
+    window.addEventListener('resize', updateActiveTile, { passive: true });
+    updateActiveTile(); // Initial call
+  }
+
   // Smooth scroll for navigation links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
