@@ -8,7 +8,8 @@
     "build": "vite build",
     "build:finals": "vite build",
     "preview": "vite preview",
-    "preview:finals": "vite preview"
+    "preview:finals": "vite preview",
+    "start:finals": "vite build && vite preview"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
