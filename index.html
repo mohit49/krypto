@@ -19,7 +19,8 @@
 
         <!-- Header -->
         <header class="w-full relative z-[100] order-0">
-            <nav class="relative w-full px-8 md:px-12 lg:px-16 xl:px-24 py-4">
+            <nav class="relative w-full group px-8 md:px-12 lg:px-16 xl:px-24 py-4">
+                <div class="relative w-full" id="nav-mega-wrapper">
                 <div class="flex items-center justify-between">
                     <!-- Logo - Left End -->
                     <div class="flex items-center">
@@ -28,46 +29,13 @@
                         </a>
                     </div>
 
-                    <!-- Menu - Center: links + mega (mega hidden by default, show on hover) -->
-                    <div class="relative group hidden xl:flex xl:flex-1 xl:justify-center" id="nav-mega-group">
+                    <!-- Menu - Center: links (mega shown on nav hover) -->
+                    <div class="hidden xl:flex xl:flex-1 xl:justify-center" id="nav-mega-group">
                         <div class="flex items-center space-x-8" id="nav-links">
                             <a href="#about" class="nav-mega-trigger text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-sm md:text-base lg:text-lg uppercase py-4 block" data-mega="mega-about">About</a>
                             <a href="#solution" class="nav-mega-trigger text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-sm md:text-base lg:text-lg uppercase py-4 block" data-mega="mega-solution">Solution</a>
                             <a href="#community" class="nav-mega-trigger text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-sm md:text-base lg:text-lg uppercase py-4 block" data-mega="mega-community">Community</a>
                             <a href="#build" class="nav-mega-trigger text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-sm md:text-base lg:text-lg uppercase py-4 block" data-mega="mega-build">Build</a>
-                        </div>
-                        <div class="mega-menu-outer absolute left-0 right-0 top-full pt-2 w-full opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-200" id="mega-menu-outer">
-                            <div class="max-w-[1170px] w-full mx-auto px-4">
-                                <div id="mega-about" class="mega-panel bg-white rounded-xl shadow-xl border-2 border-[#f1f1f1] py-4 px-4 grid grid-cols-4 gap-4">
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-lg transition-colors p-4 text-center"><img src="./assets/center-logo.png" alt="" class="w-10 h-auto mb-2"><span>About Unova</span></a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-lg transition-colors p-4 text-center"><svg class="w-10 h-10 mb-2 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008H17.25v-.008zm0 3h.008v.008H17.25v-.008z"/></svg><span>Unova Foundation</span></a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-lg transition-colors p-4 text-center"><svg class="w-10 h-10 mb-2 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg><span>Contact Us</span></a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-lg transition-colors p-4 text-center"><svg class="w-10 h-10 mb-2 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg><span>Support</span></a>
-                                </div>
-                                <div id="mega-solution" class="mega-panel hidden bg-white rounded-xl shadow-xl border-2 border-[#f1f1f1] py-4 px-4 grid grid-cols-4 gap-4">
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">Decentralized Finance (DeFi)</a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">Enterprise & Consumer Apps (Supply Chain)</a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">Real World Assets (RWA)</a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">Privacy Data Transmission</a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">Unova Infrastructure</a>
-                                </div>
-                                <div id="mega-community" class="mega-panel hidden bg-white rounded-xl shadow-xl border-2 border-[#f1f1f1] py-4 px-4 grid grid-cols-4 gap-4">
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">Telegram Community</a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">X Community</a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">Ecosystem Builders</a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">Unova Incubation Hub</a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">Events</a>
-                                </div>
-                                <div id="mega-build" class="mega-panel hidden bg-white rounded-xl shadow-xl border-2 border-[#f1f1f1] py-4 px-4 grid grid-cols-4 gap-4">
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">Developers</a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">Validator Nodes</a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">Documentation</a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">Grants</a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">Decentralized Applications (dApps)</a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">The UON Token</a>
-                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center">Unova Blockchain Explorer</a>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -91,6 +59,44 @@
                             </svg>
                         </button>
                     </div>
+                </div>
+                        <div class="mega-menu-outer absolute left-0 right-0 top-full pt-2 w-full opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-200" id="mega-menu-outer">
+                            <div class="w-full mx-auto px-4">
+                                <div id="mega-about" class="mega-panel bg-white rounded-xl shadow-xl border-2 border-[#f1f1f1] py-4 px-4 grid grid-cols-4 gap-4">
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-lg transition-colors p-4 text-center"><img src="./assets/center-logo.png" alt="" class="w-10 h-auto mb-2"><span>About Unova</span></a>
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-lg transition-colors p-4 text-center"><svg class="w-10 h-10 mb-2 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008H17.25v-.008zm0 3h.008v.008H17.25v-.008z"/></svg><span>Unova Foundation</span></a>
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-lg transition-colors p-4 text-center"><svg class="w-10 h-10 mb-2 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg><span>Contact Us</span></a>
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-lg transition-colors p-4 text-center"><svg class="w-10 h-10 mb-2 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg><span>Support</span></a>
+                                </div>
+                                <div id="mega-solution" class="mega-panel hidden bg-white rounded-xl shadow-xl border-2 border-[#f1f1f1] py-4 px-4 grid grid-cols-5 gap-4">
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/dcen-sol.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Decentralized Finance (DeFi)</span></a>
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/enter-sol.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Enterprise & Consumer Apps (Supply Chain)</span></a>
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/real-sol.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Real World Assets (RWA)</span></a>
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/privacy-sol.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Privacy Data Transmission</span></a>
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/unova-infra.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Unova Infrastructure</span></a>
+                                </div>
+                                <div id="mega-community" class="mega-panel hidden bg-white rounded-xl shadow-xl border-2 border-[#f1f1f1] py-4 px-4 grid grid-cols-2 min-[1170px]:grid-cols-5 gap-4">
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><svg class="w-10 h-10 mb-2 text-gray-900 shrink-0" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M23.1117 4.49449C23.4296 2.94472 21.9074 1.65683 20.4317 2.227L2.3425 9.21601C0.694517 9.85273 0.621087 12.1572 2.22518 12.8975L6.1645 14.7157L8.03849 21.2746C8.13583 21.6153 8.40618 21.8791 8.74917 21.968C9.09216 22.0568 9.45658 21.9576 9.70712 21.707L12.5938 18.8203L16.6375 21.8531C17.8113 22.7334 19.5019 22.0922 19.7967 20.6549L23.1117 4.49449ZM3.0633 11.0816L21.1525 4.0926L17.8375 20.2531L13.1 16.6999C12.7019 16.4013 12.1448 16.4409 11.7929 16.7928L10.5565 18.0292L10.928 15.9861L18.2071 8.70703C18.5614 8.35278 18.5988 7.79106 18.2947 7.39293C17.9906 6.99479 17.4389 6.88312 17.0039 7.13168L6.95124 12.876L3.0633 11.0816ZM8.17695 14.4791L8.78333 16.6015L9.01614 15.321C9.05253 15.1209 9.14908 14.9366 9.29291 14.7928L11.5128 12.573L8.17695 14.4791Z"/></svg><span>Telegram Community</span></a>
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><svg class="w-10 h-10 mb-2 text-gray-900 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>X Community</span></a>
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/icon-eco-system.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Ecosystem Builders</span></a>
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/unova-cum.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Unova Incubation Hub</span></a>
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/events-cummunity.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Events</span></a>
+                                </div>
+                                <div id="mega-build" class="mega-panel hidden bg-white rounded-xl shadow-xl border-2 border-[#f1f1f1] py-4 px-4 grid grid-cols-4 gap-4">
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/devel-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Developers</span></a>
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/validator-node.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Validator Nodes</span></a>
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/documnts-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Documentation</span></a>
+                                    <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/grants-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Grants</span></a>
+                                    <div class="col-span-4 grid grid-cols-8 gap-4 items-stretch">
+                                    <span class="col-span-1" aria-hidden="true"></span>
+                                    <a href="#" class="col-span-2 flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/devel-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Decentralized Applications (dApps)</span></a>
+                                    <a href="#" class="col-span-2 flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/uno-token-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>The UON Token</span></a>
+                                    <a href="#" class="col-span-2 flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/uno-bc-d-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Unova Blockchain Explorer</span></a>
+                                    <span class="col-span-1" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </nav>
         </header>
@@ -186,7 +192,7 @@
             var triggers = document.querySelectorAll('.nav-mega-trigger');
             var panels = document.querySelectorAll('.mega-panel');
             var outer = document.getElementById('mega-menu-outer');
-            var group = document.getElementById('nav-mega-group');
+            var wrapper = document.getElementById('nav-mega-wrapper');
             function showPanel(id) {
               panels.forEach(function(p) {
                 p.classList.toggle('hidden', p.id !== id);
@@ -207,14 +213,14 @@
                 setActiveLink(a);
               });
             });
-            if (group) {
-              group.addEventListener('mouseleave', function() {
-                showPanel('mega-about');
-                clearActiveLink();
+            if (wrapper) {
+              wrapper.addEventListener('mouseleave', function(e) {
+                var related = e.relatedTarget;
+                if (!related || !wrapper.contains(related)) {
+                  showPanel('mega-about');
+                  clearActiveLink();
+                }
               });
-            }
-            if (outer) {
-              outer.addEventListener('mouseleave', function() { showPanel('mega-about'); });
             }
             showPanel('mega-about');
           })();
