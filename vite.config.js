@@ -21,6 +21,10 @@ export default defineConfig({
     cssMinify: true,
     cssCodeSplit: true,
     rollupOptions: {
+      input: {
+        main: 'index.html',
+        about: 'about.html',
+      },
       output: {
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
