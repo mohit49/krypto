@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Unova - Unova</title>
+    <link rel="stylesheet" href="https://use.typekit.net/ion1ndn.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>.mega-link-active { color: rgb(37 99 235) !important; }</style>
+    <script type="module" src="/src/main.js"></script>
+    <style>
+        body { font-family: "proxima-nova", sans-serif; }
+        .about-stack h2 { margin: 0; line-height: 0.82; letter-spacing: -0.02em; }
+        .about-stack h2 + h2 { margin-top: 0; padding-top: 0; }
+        .about-stack .about-block { margin-bottom: 0; }
+        .about-stack .about-block + .about-block { margin-top: 0; padding-top: 0; }
+        /* Font: responsive by default, static 100px on desktop */
+        .about-inner {
+            container-type: inline-size;
+            container-name: about-inner;
+            font-size: 30cqw;
+        }
+        .about-inner h2 {
+            font-size: 100%;
+            white-space: nowrap;
+        }
+        .about-inner p {
+            font-size: 33.33%;
+        }
+        @media (min-width: 768px) {
+            .about-inner {
+                font-size: 120px; /* 80% of 150px */
+            }
+            .about-inner h2 {
+                font-size: 100%;
+            }
+            .about-inner-is-blockchain {
+                margin-left: -320px;
+            }
+            .about-inner-network {
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+            .about-inner-network p {
+                font-size: 20px;
+            }
+        }
+        /* Four tiles: heights (work even if Tailwind arbitrary values not built) */
+        .about-tile-tall {
+            min-height: 200px;
+            height: 260px;
+        }
+        @media (min-width: 768px) {
+            .about-tile-tall { height: 280px; }
+        }
+        .about-tile-short {
+            min-height: 120px;
+            height: 160px;
+        }
+        @media (min-width: 768px) {
+            .about-tile-short { height: 180px; }
+        }
+    </style>
+</head>
+<body class="bg-[#262626] min-h-full m-0 p-[15px]">
+    <section class="w-full min-h-screen flex flex-col bg-white rounded-[20px] relative overflow-hidden">
+        <!-- Header -->
+        <header class="w-full relative z-[100] order-0">
+            <nav class="relative w-full group px-8 md:px-12 lg:px-16 xl:px-24 py-4">
+                <div class="relative w-full" id="nav-mega-wrapper">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <a href="./index.html" class="flex items-center">
+                            <img src="./assets/Unova.png" alt="Unova Logo" class="h-16 max-md:h-10 w-auto">
+                        </a>
+                    </div>
+                    <div class="hidden xl:flex xl:flex-1 xl:justify-center" id="nav-mega-group">
+                        <div class="flex items-center space-x-8" id="nav-links">
+                            <a href="./index.html#about" class="nav-mega-trigger text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-sm md:text-base lg:text-lg uppercase py-4 block" data-mega="mega-about">About</a>
+                            <a href="./index.html#solution" class="nav-mega-trigger text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-sm md:text-base lg:text-lg uppercase py-4 block" data-mega="mega-solution">Solution</a>
+                            <a href="./index.html#community" class="nav-mega-trigger text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-sm md:text-base lg:text-lg uppercase py-4 block" data-mega="mega-community">Community</a>
+                            <a href="./index.html#build" class="nav-mega-trigger text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-sm md:text-base lg:text-lg uppercase py-4 block" data-mega="mega-build">Build</a>
+                        </div>
+                    </div>
+                    <div class="hidden xl:flex items-center space-x-4">
+                        <button class="px-8 py-4 bg-[#262626] text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 font-bold text-sm">Build on Unova</button>
+                        <button class="px-6 py-4 bg-[#262626] text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 font-bold flex items-center">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                        </button>
+                    </div>
+                    <div class="xl:hidden flex items-center">
+                        <button id="mobile-menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" class="bg-gray-800 text-white hover:bg-gray-700 focus:outline-none p-2 rounded-lg">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="mega-menu-outer absolute left-0 right-0 top-full pt-2 w-full opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-200" id="mega-menu-outer">
+                    <div class="w-full mx-auto px-4">
+                        <div id="mega-about" class="mega-panel bg-white rounded-xl shadow-xl border-2 border-[#f1f1f1] py-4 px-4 grid grid-cols-4 gap-4">
+                            <a href="./about.html" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-lg transition-colors p-4 text-center"><img src="./assets/center-logo.png" alt="" class="w-10 h-auto mb-2"><span>About Unova</span></a>
+                            <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-lg transition-colors p-4 text-center"><svg class="w-10 h-10 mb-2 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008H17.25v-.008zm0 3h.008v.008H17.25v-.008z"/></svg><span>Unova Foundation</span></a>
+                            <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-lg transition-colors p-4 text-center"><svg class="w-10 h-10 mb-2 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg><span>Contact Us</span></a>
+                            <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-lg transition-colors p-4 text-center"><svg class="w-10 h-10 mb-2 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg><span>Support</span></a>
+                        </div>
+                        <div id="mega-solution" class="mega-panel hidden bg-white rounded-xl shadow-xl border-2 border-[#f1f1f1] py-4 px-4 grid grid-cols-2 min-[900px]:grid-cols-3 min-[1170px]:grid-cols-6 gap-4">
+                            <a href="./index.html#solution" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/dcen-sol.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Decentralized Finance (DeFi)</span></a>
+                            <a href="./index.html#solution" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/enter-sol.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Enterprise & Consumer Apps (Supply Chain)</span></a>
+                            <a href="./index.html#solution" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/real-sol.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Real World Assets (RWA)</span></a>
+                            <a href="./index.html#solution" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/privacy-sol.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Privacy Data Transmission</span></a>
+                            <a href="./index.html#solution" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/enter-sol.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Decentralized AI and autonomous operational decision-making</span></a>
+                            <a href="./index.html#solution" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/unova-infra.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Unova Web3 Infrastructure</span></a>
+                        </div>
+                        <div id="mega-community" class="mega-panel hidden bg-white rounded-xl shadow-xl border-2 border-[#f1f1f1] py-4 px-4 grid grid-cols-2 min-[1170px]:grid-cols-5 gap-4">
+                            <a href="https://t.me/unova_io" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><svg class="w-10 h-10 mb-2 text-gray-900 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M23.1117 4.49449C23.4296 2.94472 21.9074 1.65683 20.4317 2.227L2.3425 9.21601C0.694517 9.85273 0.621087 12.1572 2.22518 12.8975L6.1645 14.7157L8.03849 21.2746C8.13583 21.6153 8.40618 21.8791 8.74917 21.968C9.09216 22.0568 9.45658 21.9576 9.70712 21.707L12.5938 18.8203L16.6375 21.8531C17.8113 22.7334 19.5019 22.0922 19.7967 20.6549L23.1117 4.49449ZM3.0633 11.0816L21.1525 4.0926L17.8375 20.2531L13.1 16.6999C12.7019 16.4013 12.1448 16.4409 11.7929 16.7928L10.5565 18.0292L10.928 15.9861L18.2071 8.70703C18.5614 8.35278 18.5988 7.79106 18.2947 7.39293C17.9906 6.99479 17.4389 6.88312 17.0039 7.13168L6.95124 12.876L3.0633 11.0816ZM8.17695 14.4791L8.78333 16.6015L9.01614 15.321C9.05253 15.1209 9.14908 14.9366 9.29291 14.7928L11.5128 12.573L8.17695 14.4791Z"/></svg><span>Telegram Community</span></a>
+                            <a href="https://x.com/unova_io" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><svg class="w-10 h-10 mb-2 text-gray-900 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>X Community</span></a>
+                            <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><svg class="w-10 h-10 mb-2 text-gray-900 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg><span>Discord Community</span></a>
+                            <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/icon-eco-system.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Ecosystem Builders</span></a>
+                            <a href="#" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/unova-cum.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Unova Incubation Hub</span></a>
+                        </div>
+                        <div id="mega-build" class="mega-panel hidden bg-white rounded-xl shadow-xl border-2 border-[#f1f1f1] py-4 px-4 grid grid-cols-2 min-[900px]:grid-cols-3 min-[1170px]:grid-cols-6 gap-4">
+                            <a href="./index.html#build" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/devel-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Unova Testnet</span></a>
+                            <a href="./index.html#build" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/devel-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Unova NOP</span></a>
+                            <a href="./index.html#build" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/validator-node.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Validator Nodes</span></a>
+                            <a href="./index.html#build" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/grants-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Grants (Coming Soon)</span></a>
+                            <a href="./index.html#build" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/uno-token-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>The UON Token</span></a>
+                            <a href="https://explorertest.unova.io/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="./assets/uno-bc-d-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Unova Testnet Explorer</span></a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Mobile menu backdrop -->
+        <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/50 z-[100] opacity-0 pointer-events-none transition-opacity duration-300 ease-out xl:hidden" aria-hidden="true"></div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu" class="fixed top-0 right-0 h-full w-[min(320px,85vw)] max-w-[320px] bg-gray-800 shadow-2xl z-[101] transform transition-transform duration-300 ease-out translate-x-full xl:hidden pt-6 px-4 pb-4 overflow-y-auto">
+            <div class="flex justify-end mb-4">
+                <button type="button" id="mobile-menu-close" aria-label="Close menu" class="p-2 text-white hover:text-gray-200 rounded-lg focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-1" aria-label="Mobile menu">
+                <div class="mobile-accordion-item border-b border-gray-600">
+                    <button type="button" class="mobile-accordion-head w-full flex items-center justify-between py-3 text-left text-white hover:text-gray-200 font-bold text-base uppercase transition-colors" aria-expanded="false" aria-controls="mobile-accordion-about" data-accordion="about">
+                        <span>About</span>
+                        <svg class="mobile-accordion-chevron w-5 h-5 shrink-0 text-white transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div id="mobile-accordion-about" class="mobile-accordion-body hidden overflow-hidden" role="region" aria-label="About submenu">
+                        <div class="pb-3 pl-1 flex flex-col space-y-2">
+                            <a href="./about.html" class="text-gray-300 hover:text-white text-sm py-1.5">About Unova</a>
+                            <a href="#" class="text-gray-300 hover:text-white text-sm py-1.5">Unova Foundation</a>
+                            <a href="#" class="text-gray-300 hover:text-white text-sm py-1.5">Contact Us</a>
+                            <a href="#" class="text-gray-300 hover:text-white text-sm py-1.5">Support</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-accordion-item border-b border-gray-600">
+                    <button type="button" class="mobile-accordion-head w-full flex items-center justify-between py-3 text-left text-white hover:text-gray-200 font-bold text-base uppercase transition-colors" aria-expanded="false" aria-controls="mobile-accordion-solution" data-accordion="solution">
+                        <span>Solution</span>
+                        <svg class="mobile-accordion-chevron w-5 h-5 shrink-0 text-white transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div id="mobile-accordion-solution" class="mobile-accordion-body hidden overflow-hidden" role="region" aria-label="Solution submenu">
+                        <div class="pb-3 pl-1 flex flex-col space-y-2">
+                            <a href="./index.html#solution" class="text-gray-300 hover:text-white text-sm py-1.5">Decentralized Finance (DeFi)</a>
+                            <a href="./index.html#solution" class="text-gray-300 hover:text-white text-sm py-1.5">Enterprise &amp; Consumer Apps (Supply Chain)</a>
+                            <a href="./index.html#solution" class="text-gray-300 hover:text-white text-sm py-1.5">Real World Assets (RWA)</a>
+                            <a href="./index.html#solution" class="text-gray-300 hover:text-white text-sm py-1.5">Privacy Data Transmission</a>
+                            <a href="./index.html#solution" class="text-gray-300 hover:text-white text-sm py-1.5">Decentralized AI and autonomous operational decision-making</a>
+                            <a href="./index.html#solution" class="text-gray-300 hover:text-white text-sm py-1.5">Unova Web3 Infrastructure</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-accordion-item border-b border-gray-600">
+                    <button type="button" class="mobile-accordion-head w-full flex items-center justify-between py-3 text-left text-white hover:text-gray-200 font-bold text-base uppercase transition-colors" aria-expanded="false" aria-controls="mobile-accordion-community" data-accordion="community">
+                        <span>Community</span>
+                        <svg class="mobile-accordion-chevron w-5 h-5 shrink-0 text-white transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div id="mobile-accordion-community" class="mobile-accordion-body hidden overflow-hidden" role="region" aria-label="Community submenu">
+                        <div class="pb-3 pl-1 flex flex-col space-y-2">
+                            <a href="https://t.me/unova_io" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white text-sm py-1.5">Telegram Community</a>
+                            <a href="https://x.com/unova_io" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white text-sm py-1.5">X Community</a>
+                            <a href="#" class="text-gray-300 hover:text-white text-sm py-1.5">Discord Community</a>
+                            <a href="#" class="text-gray-300 hover:text-white text-sm py-1.5">Ecosystem Builders</a>
+                            <a href="#" class="text-gray-300 hover:text-white text-sm py-1.5">Unova Incubation Hub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-accordion-item border-b border-gray-600">
+                    <button type="button" class="mobile-accordion-head w-full flex items-center justify-between py-3 text-left text-white hover:text-gray-200 font-bold text-base uppercase transition-colors" aria-expanded="false" aria-controls="mobile-accordion-build" data-accordion="build">
+                        <span>Build</span>
+                        <svg class="mobile-accordion-chevron w-5 h-5 shrink-0 text-white transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div id="mobile-accordion-build" class="mobile-accordion-body hidden overflow-hidden" role="region" aria-label="Build submenu">
+                        <div class="pb-3 pl-1 flex flex-col space-y-2">
+                            <a href="./index.html#build" class="text-gray-300 hover:text-white text-sm py-1.5">Unova Testnet</a>
+                            <a href="./index.html#build" class="text-gray-300 hover:text-white text-sm py-1.5">Unova NOP</a>
+                            <a href="./index.html#build" class="text-gray-300 hover:text-white text-sm py-1.5">Validator Nodes</a>
+                            <a href="./index.html#build" class="text-gray-300 hover:text-white text-sm py-1.5">Grants (Coming Soon)</a>
+                            <a href="./index.html#build" class="text-gray-300 hover:text-white text-sm py-1.5">The UON Token</a>
+                            <a href="https://explorertest.unova.io/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white text-sm py-1.5">Unova Testnet Explorer</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col space-y-2 pt-4">
+                    <button type="button" class="px-6 py-2.5 border-2 border-white text-white rounded-lg hover:bg-white hover:text-gray-800 transition-colors duration-200 font-bold text-sm">Build on Unova</button>
+                    <button type="button" class="px-6 py-2.5 border-2 border-white text-white rounded-lg hover:bg-white hover:text-gray-800 transition-colors duration-200 font-bold flex items-center justify-center">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </button>
+                </div>
+            </nav>
+        </div>
+
+        <script>
+        (function() {
+            var triggers = document.querySelectorAll('.nav-mega-trigger');
+            var panels = document.querySelectorAll('.mega-panel');
+            var wrapper = document.getElementById('nav-mega-wrapper');
+            function showPanel(id) {
+                panels.forEach(function(p) { p.classList.toggle('hidden', p.id !== id); });
+            }
+            function setActiveLink(link) {
+                triggers.forEach(function(a) { a.classList.toggle('mega-link-active', a === link); });
+            }
+            function clearActiveLink() {
+                triggers.forEach(function(a) { a.classList.remove('mega-link-active'); });
+            }
+            triggers.forEach(function(a) {
+                a.addEventListener('mouseenter', function() {
+                    var id = a.getAttribute('data-mega');
+                    if (id) showPanel(id);
+                    setActiveLink(a);
+                });
+            });
+            if (wrapper) {
+                wrapper.addEventListener('mouseleave', function(e) {
+                    var related = e.relatedTarget;
+                    if (!related || !wrapper.contains(related)) {
+                        showPanel('mega-about');
+                        clearActiveLink();
+                    }
+                });
+            }
+            showPanel('mega-about');
+        })();
+        </script>
+
+        <!-- About page content -->
+        <main class="flex-1 px-8 md:px-12 lg:px-16 py-12 md:py-16">
+            <h1 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 uppercase tracking-wide mb-12 md:mb-16 text-center">About Unova</h1>
+            <div class="w-full max-w-[1170px] mx-auto px-4 sm:px-6 md:px-8">
+                <div class="about-stack w-full text-gray-900 text-center flex flex-col md:flex-row flex-wrap items-stretch justify-center gap-0">
+                <div class="about-block w-full md:w-1/3 flex flex-col items-start min-w-0 text-left">
+                    <div class="about-inner min-w-0 w-full">
+                        <h2 class="font-bold uppercase tracking-tight">Unova</h2>
+                    </div>
+                </div>
+                <div class="about-block w-full md:w-1/3 md:ml-8 flex flex-col items-center min-w-0 text-center">
+                    <div class="about-inner about-inner-is-blockchain min-w-0 w-full">
+                        <h2 class="font-bold uppercase tracking-tight">Is A</h2>
+                        <h2 class="font-bold uppercase tracking-tight">Blockchain</h2>
+                    </div>
+                </div>
+                <div class="about-block w-full md:w-1/3 md:ml-8 flex flex-col items-end min-w-0 text-right">
+                    <div class="about-inner about-inner-network min-w-0 w-full">
+                        <h2 class="font-bold uppercase tracking-tight">Network</h2>
+                        <p class="mt-6 md:mt-8 text-black text-[20px] min-w-0 italic leading-relaxed" style="width: 33%; max-width: 33%;">With privacy-enabled data distribution clusters and cross-cluster distribution capabilities, made possible by the Web3 data distribution privacy protocol and multi-layer architecture. It's the foundation of a new way of distributing data built on Web3, leveraging its own blockchain, smart contracts, dApps, and powered by UON, its native cryptocurrency.</p>
+                    </div>
+                </div>
+                <!-- Four tiles row: equal width, 10% gap, first two taller, last two shorter -->
+                <div class="w-full flex flex-nowrap mt-12 md:mt-16 overflow-x-auto" style="gap: 0;">
+                    <div class="about-tile-tall rounded-lg shrink-0" style="width: 25%; flex: 0 0 25%; background-color: #f3f4f6;"></div>
+                    <div class="about-tile-tall rounded-lg shrink-0" style="width: 25%; flex: 0 0 25%; background-color: #e5e7eb;"></div>
+                    <div class="about-tile-short rounded-lg shrink-0" style="width: 25%; flex: 0 0 25%; background-color: #d1d5db;"></div>
+                    <div class="about-tile-short rounded-lg shrink-0" style="width: 25%; flex: 0 0 25%; background-color: #9ca3af;"></div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full py-12 md:py-16">
+        <div class="w-full md:w-[80%] mx-auto px-3 sm:px-8 md:px-10 lg:px-12 xl:px-16">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 max-md:gap-4 md:gap-10 lg:gap-12 mb-12 md:mb-16">
+                <div>
+                    <h3 class="text-white font-semibold text-[25px] max-md:text-[13px] mb-4">About Unova</h3>
+                    <ul class="space-y-3 max-md:space-y-0 max-md:mt-[5px] [&>li]:max-md:my-0">
+                        <li><a href="./about.html" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">About Unova</a></li>
+                        <li><a href="#" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Foundation</a></li>
+                        <li><a href="#" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold text-[25px] max-md:text-[13px] mb-4">Solutions</h3>
+                    <ul class="space-y-3 max-md:space-y-0 max-md:mt-[5px] [&>li]:max-md:my-0">
+                        <li><a href="./index.html#solution" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Decentralized Finance (DeFi)</a></li>
+                        <li><a href="./index.html#solution" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Enterprise & Consumer Apps (Supply Chain)</a></li>
+                        <li><a href="./index.html#solution" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Real World Assets (RWA)</a></li>
+                        <li><a href="./index.html#solution" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Privacy Data Transmission</a></li>
+                        <li><a href="./index.html#solution" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Decentralized AI and autonomous operational decision-making</a></li>
+                        <li><a href="./index.html#solution" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Web3 Infrastructure</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold text-[25px] max-md:text-[13px] mb-4">Community</h3>
+                    <ul class="space-y-3 max-md:space-y-0 max-md:mt-[5px] [&>li]:max-md:my-0">
+                        <li><a href="https://t.me/unova_io" target="_blank" rel="noopener noreferrer" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Telegram Community</a></li>
+                        <li><a href="https://x.com/unova_io" target="_blank" rel="noopener noreferrer" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">X Community</a></li>
+                        <li><a href="#" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Discord Community</a></li>
+                        <li><a href="#" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Ecosystem Builders</a></li>
+                        <li><a href="#" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Incubation Hub</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold text-[25px] max-md:text-[13px] mb-4">Build</h3>
+                    <ul class="space-y-3 max-md:space-y-0 max-md:mt-[5px] [&>li]:max-md:my-0">
+                        <li><a href="./index.html#build" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Testnet</a></li>
+                        <li><a href="./index.html#build" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova NOP</a></li>
+                        <li><a href="./index.html#build" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Validator Nodes</a></li>
+                        <li><a href="./index.html#build" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Grants (Coming Soon)</a></li>
+                        <li><a href="./index.html#build" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">The UON Token</a></li>
+                        <li><a href="https://explorertest.unova.io/" target="_blank" rel="noopener noreferrer" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Testnet Explorer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center text-[#434343] text-[22px] max-md:text-[10px] pt-8">Copyright © 2026 unova.io. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

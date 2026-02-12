@@ -275,10 +275,18 @@
   max-height: 400px;
 }
 
-/* Solutions side panel: active tab dark black */
+/* Solutions side panel: active, hover, and focus tab blue */
 .solutions-tab.active {
-  color: #000;
+  color: #2563eb;
   font-weight: 600;
+}
+.solutions-tab:hover {
+  color: #2563eb;
+}
+.solutions-tab:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  color: #2563eb;
 }
 
 .solutions-panel.active {
