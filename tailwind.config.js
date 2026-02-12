@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./about.html",
+    "./about/**/*.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   safelist: [

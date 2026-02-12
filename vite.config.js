@@ -23,7 +23,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
-        about: 'about.html',
+        about: 'about/about.html',
+        contactUs: 'about/contact-us.html',
+        foundation: 'about/foundation.html',
       },
       output: {
         entryFileNames: 'assets/[name]-[hash].js',
