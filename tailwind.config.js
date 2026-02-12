@@ -14,6 +14,9 @@ export default {
       fontFamily: {
         'sans': ['proxima-nova', 'sans-serif'],
       },
+      maxWidth: {
+        '8xl': '96rem', /* 1536px */
+      },
     },
   },
   plugins: [],
