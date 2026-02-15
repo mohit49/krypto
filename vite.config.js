@@ -26,6 +26,7 @@ export default defineConfig({
         about: 'about/about.html',
         contactUs: 'about/contact-us.html',
         foundation: 'about/foundation.html',
+        support: 'about/support.html',
       },
       output: {
         entryFileNames: 'assets/[name]-[hash].js',
