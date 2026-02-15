@@ -62,9 +62,6 @@
         .about-section-heading {
             font-weight: 200;
         }
-        /* Parallax: transform only, no layout change */
-        .about-parallax-tiles,
-        .about-parallax-block { will-change: transform; }
     </style>
   <script type="module" crossorigin src="../assets/main-BXxfVDb2.js"></script>
   <link rel="stylesheet" crossorigin href="../assets/main-CSgvOoiI.css">
@@ -258,25 +255,25 @@
             <h1 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 uppercase tracking-wide mb-12 md:mb-16 text-center">About Unova</h1>
             <div class="w-full lg:max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
                 <div class="about-stack w-full text-gray-900 text-center flex flex-col flex-wrap items-stretch justify-center gap-0">
-                <div class="about-block about-parallax-block w-full flex flex-col items-start min-w-0 text-left" data-parallax-speed="0.04">
+                <div class="about-block w-full flex flex-col items-start min-w-0 text-left">
                     <div class="about-inner min-w-0 w-full">
                         <h2 class="font-bold uppercase tracking-tight">Unova</h2>
                     </div>
                 </div>
-                <div class="about-block about-parallax-block w-full md:ml-8 flex flex-col items-center min-w-0 text-center self-center" data-parallax-speed="0.08">
+                <div class="about-block w-full md:ml-8 flex flex-col items-center min-w-0 text-center self-center">
                     <div class="about-inner about-inner-is-blockchain min-w-0 w-full">
                         <h2 class="font-bold uppercase tracking-tight">Is A</h2>
                         <h2 class="font-bold uppercase tracking-tight">Blockchain</h2>
                     </div>
                 </div>
-                <div class="about-block about-parallax-block w-full md:ml-8 flex flex-col items-end min-w-0 text-right self-end" data-parallax-speed="0.12">
+                <div class="about-block w-full md:ml-8 flex flex-col items-end min-w-0 text-right self-end">
                     <div class="about-inner about-inner-network min-w-0 w-full">
                         <h2 class="font-bold uppercase tracking-tight">Network</h2>
                         <p class="mt-6 md:mt-8 text-black text-[20px] min-w-0 italic leading-relaxed" style="width: 33%; max-width: 33%;">With privacy-enabled data distribution clusters and cross-cluster distribution capabilities, made possible by the Web3 data distribution privacy protocol and multi-layer architecture. It's the foundation of a new way of distributing data built on Web3, leveraging its own blockchain, smart contracts, dApps, and powered by UON, its native cryptocurrency.</p>
                     </div>
                 </div>
                 <!-- Four tiles row: equal width, images in sequence -->
-                <div class="about-tiles-row about-parallax-tiles w-full flex flex-nowrap items-end mt-12 md:mt-16 overflow-x-auto" style="gap: 20px;">
+                <div class="about-tiles-row w-full flex flex-nowrap items-end mt-12 md:mt-16 overflow-x-auto" style="gap: 20px;">
                     <div class="about-tile-tall flex flex-col justify-end items-center rounded-lg flex-1 min-w-0 overflow-hidden">
                         <img src="../assets/abiut-1-DiBiBcfp.png" alt="" class="h-full w-auto max-w-none object-cover object-bottom">
                     </div>
@@ -413,40 +410,5 @@
             <p class="text-center text-[#434343] text-[22px] max-md:text-[10px] pt-8">Copyright © 2026 unova.io. All rights reserved.</p>
         </div>
     </footer>
-    <script>
-        (function() {
-            var tiles = document.querySelector('.about-parallax-tiles');
-            var textBlocks = document.querySelectorAll('.about-parallax-block');
-            var ticking = false;
-            var TILES_FACTOR = 0.05; /* parallax from top: tiles drift down in view so they stay visible */
-            function update() {
-                var scrollY = window.scrollY;
-                /* Tiles: offset from viewport top so they move slower and stay in view (section is overflow-visible so they don't get clipped) */
-                if (tiles) {
-                    var rect = tiles.getBoundingClientRect();
-                    var vh = window.innerHeight;
-                    var offset = 0;
-                    if (rect.top < vh && rect.bottom > 0) {
-                        offset = (vh - rect.top) * TILES_FACTOR;
-                        if (offset < 0) offset = 0;
-                    }
-                    tiles.style.transform = 'translateY(' + offset + 'px)';
-                }
-                textBlocks.forEach(function(el) {
-                    var speed = parseFloat(el.getAttribute('data-parallax-speed')) || 0.08;
-                    el.style.transform = 'translateY(' + (scrollY * speed) + 'px)';
-                });
-                ticking = false;
-            }
-            function onScroll() {
-                if (!ticking) {
-                    requestAnimationFrame(update);
-                    ticking = true;
-                }
-            }
-            window.addEventListener('scroll', onScroll, { passive: true });
-            update();
-        })();
-    </script>
 </body>
 </html>
