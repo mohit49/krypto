@@ -13,58 +13,52 @@
         .about-stack h2 + h2 { margin-top: 0; padding-top: 0; }
         .about-stack .about-block { margin-bottom: 0; }
         .about-stack .about-block + .about-block { margin-top: 0; padding-top: 0; }
-        /* Font: responsive by default, static 100px on desktop */
+        .about-hero-line { font-size: clamp(1rem, 4vw, 1.5rem); }
+        /* Desktop: original large stacked hero */
         .about-inner {
             container-type: inline-size;
             container-name: about-inner;
             font-size: 30cqw;
         }
-        .about-inner h2 {
-            font-size: 100%;
-            white-space: nowrap;
-        }
-        .about-inner p {
-            font-size: 33.33%;
-        }
+        .about-inner h2 { font-size: 100%; white-space: nowrap; }
+        .about-inner p { font-size: 33.33%; }
         @media (min-width: 768px) {
-            .about-inner {
-                font-size: 120px; /* 80% of 150px */
-            }
-            .about-inner h2 {
-                font-size: 100%;
-            }
-            .about-inner-is-blockchain {
-                margin-left: -320px;
-            }
+            .about-inner { font-size: 120px; }
+            .about-inner h2 { font-size: 100%; }
+            .about-inner-is-blockchain { margin-left: -320px; }
             .about-inner-network {
                 display: flex;
                 justify-content: flex-end;
                 flex-direction: column;
                 align-items: flex-end;
             }
-            .about-inner-network p {
-                font-size: 20px;
+            .about-inner-network p { font-size: 20px; width: 33%; max-width: 33%; }
+        }
+        /* Four tiles: fixed height on mobile; auto on desktop (previous style) */
+        .about-tile-tall,
+        .about-tile-short {
+            height: 280px;
+        }
+        @media (min-width: 768px) {
+            .about-tile-tall,
+            .about-tile-short {
+                height: auto;
             }
         }
-        /* Four tiles: tall tiles match image height; align from bottom via parent items-end */
-        .about-tile-tall {
-            height: auto;
-        }
-        .about-tile-short {
-            height: auto;
-        }
         .about-tiles-row {
-            margin-top: -100px !important;
+            margin-top: 0;
+            -webkit-overflow-scrolling: touch;
         }
         .about-end-goal {
             font-weight: 200;
+            text-align: center;
         }
         .about-section-heading {
             font-weight: 200;
         }
     </style>
-  <script type="module" crossorigin src="../assets/main-BXxfVDb2.js"></script>
-  <link rel="stylesheet" crossorigin href="../assets/main-CSgvOoiI.css">
+  <script type="module" crossorigin src="../assets/main-Dkz_MV1m.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/main-dlVyHwex.css">
 </head>
 <body class="bg-[#262626] min-h-full m-0 p-[15px]">
     <section class="w-full min-h-screen flex flex-col bg-white rounded-[20px] relative overflow-hidden">
@@ -251,10 +245,21 @@
         </script>
 
         <!-- About page content -->
-        <main class="flex-1 px-8 md:px-12 lg:px-16 py-12 md:py-16">
+        <main class="flex-1 px-0 md:px-12 lg:px-16 py-12 md:py-16">
             <h1 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 uppercase tracking-wide mb-12 md:mb-16 text-center">About Unova</h1>
             <div class="w-full lg:max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
-                <div class="about-stack w-full text-gray-900 text-center flex flex-col flex-wrap items-stretch justify-center gap-0">
+                <!-- Mobile: single line + centered full-width paragraph -->
+                <div class="about-stack md:hidden w-full text-gray-900 flex flex-col items-center gap-6">
+                    <div class="about-block w-full flex flex-wrap items-baseline justify-center gap-x-2 min-w-0">
+                        <span class="about-hero-line font-bold uppercase tracking-tight">Unova</span>
+                        <span class="about-hero-line font-bold uppercase tracking-tight">Is A</span>
+                        <span class="about-hero-line font-bold uppercase tracking-tight">Blockchain</span>
+                        <span class="about-hero-line font-bold uppercase tracking-tight">Network</span>
+                    </div>
+                    <p class="w-full text-center text-black text-base italic leading-relaxed">With privacy-enabled data distribution clusters and cross-cluster distribution capabilities, made possible by the Web3 data distribution privacy protocol and multi-layer architecture. It's the foundation of a new way of distributing data built on Web3, leveraging its own blockchain, smart contracts, dApps, and powered by UON, its native cryptocurrency.</p>
+                </div>
+                <!-- Desktop: original stacked large type + 33% paragraph -->
+                <div class="about-stack hidden md:flex w-full text-gray-900 text-center flex-col flex-wrap items-stretch justify-center gap-0">
                 <div class="about-block w-full flex flex-col items-start min-w-0 text-left">
                     <div class="about-inner min-w-0 w-full">
                         <h2 class="font-bold uppercase tracking-tight">Unova</h2>
@@ -269,22 +274,23 @@
                 <div class="about-block w-full md:ml-8 flex flex-col items-end min-w-0 text-right self-end">
                     <div class="about-inner about-inner-network min-w-0 w-full">
                         <h2 class="font-bold uppercase tracking-tight">Network</h2>
-                        <p class="mt-6 md:mt-8 text-black text-[20px] min-w-0 italic leading-relaxed" style="width: 33%; max-width: 33%;">With privacy-enabled data distribution clusters and cross-cluster distribution capabilities, made possible by the Web3 data distribution privacy protocol and multi-layer architecture. It's the foundation of a new way of distributing data built on Web3, leveraging its own blockchain, smart contracts, dApps, and powered by UON, its native cryptocurrency.</p>
+                        <p class="mt-6 md:mt-8 text-black min-w-0 italic leading-relaxed">With privacy-enabled data distribution clusters and cross-cluster distribution capabilities, made possible by the Web3 data distribution privacy protocol and multi-layer architecture. It's the foundation of a new way of distributing data built on Web3, leveraging its own blockchain, smart contracts, dApps, and powered by UON, its native cryptocurrency.</p>
                     </div>
                 </div>
+                </div>
                 <!-- Four tiles row: equal width, images in sequence -->
-                <div class="about-tiles-row w-full flex flex-nowrap items-end mt-12 md:mt-16 overflow-x-auto" style="gap: 20px;">
-                    <div class="about-tile-tall flex flex-col justify-end items-center rounded-lg flex-1 min-w-0 overflow-hidden">
-                        <img src="../assets/abiut-1-DiBiBcfp.png" alt="" class="h-full w-auto max-w-none object-cover object-bottom">
+                <div class="about-tiles-row w-full flex flex-nowrap items-stretch md:items-end mt-12 md:mt-16 overflow-x-auto overflow-y-hidden" style="gap: 20px;">
+                    <div class="about-tile-tall flex flex-col justify-end items-center rounded-lg flex-1 min-w-0 overflow-hidden max-md:flex-none max-md:min-w-[70vw]">
+                        <img src="../assets/abiut-1-DiBiBcfp.png" alt="" class="w-full h-full md:w-auto md:h-full object-cover object-bottom">
                     </div>
-                    <div class="about-tile-tall flex flex-col justify-end items-center rounded-lg flex-1 min-w-0 overflow-hidden">
-                        <img src="../assets/about-2-BAUftMyM.png" alt="" class="h-full w-auto max-w-none object-cover object-bottom">
+                    <div class="about-tile-tall flex flex-col justify-end items-center rounded-lg flex-1 min-w-0 overflow-hidden max-md:flex-none max-md:min-w-[70vw]">
+                        <img src="../assets/about-2-BAUftMyM.png" alt="" class="w-full h-full md:w-auto md:h-full object-cover object-bottom">
                     </div>
-                    <div class="about-tile-short flex flex-col justify-end items-center rounded-lg flex-1 min-w-0 overflow-hidden">
-                        <img src="../assets/about-3-6FxBqzHd.png" alt="" class="h-full w-auto max-w-none object-cover object-bottom">
+                    <div class="about-tile-short flex flex-col justify-end items-center rounded-lg flex-1 min-w-0 overflow-hidden max-md:flex-none max-md:min-w-[70vw]">
+                        <img src="../assets/about-3-6FxBqzHd.png" alt="" class="w-full h-full md:w-auto md:h-full object-cover object-bottom">
                     </div>
-                    <div class="about-tile-short flex flex-col justify-end items-center rounded-lg flex-1 min-w-0 overflow-hidden">
-                        <img src="../assets/about-4-BEJGBiVb.png" alt="" class="h-full w-auto max-w-none object-cover object-bottom">
+                    <div class="about-tile-short flex flex-col justify-end items-center rounded-lg flex-1 min-w-0 overflow-hidden max-md:flex-none max-md:min-w-[70vw]">
+                        <img src="../assets/about-4-BEJGBiVb.png" alt="" class="w-full h-full md:w-auto md:h-full object-cover object-bottom">
                     </div>
                 </div>
             </div>
@@ -300,33 +306,37 @@
 
     <!-- From data To assets -->
     <section class="w-full mt-5 py-12 md:py-16 px-8 md:px-12 lg:px-16 bg-white text-gray-900 rounded-[20px]">
-        <h2 class="about-section-heading text-left font-extralight text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-900 mb-8 md:mb-12">
-            From data To assets
-        </h2>
-        <div class="max-w-8xl mx-auto space-y-6 text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed text-left">
-            <p>With Web3, people, machines & businesses can trade value, information & work with global counterparties they don't know or explicitly trust, without an intermediary. The most important evolution enabled by Web3 is the minimization of trust required for coordination on a global scale. This marks a move towards trusting all constituents of a network implicitly rather than needing to trust everyone explicitly and/or seeking to achieve trust extrinsically.</p>
-            <p>Decentralized data architecture (Web3) is changing how the web works, moving the internet into a new era, building the path towards common data standards and rules allowing for a decentralized infrastructure to run applications that understand the data.</p>
-            <p>Move away from a centralized internet where big organizations control your data.</p>
-            <p>Unova does not store data but instead provides the infrastructure for companies to use. This is essential for creating global cross border data exchange where companies don't need to trust one organization to manage their data.</p>
+        <div class="max-w-8xl mx-auto">
+            <h2 class="about-section-heading text-left font-extralight text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-900 mb-8 md:mb-12">
+                From data To assets
+            </h2>
+            <div class="space-y-6 text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed text-left">
+                <p>With Web3, people, machines & businesses can trade value, information & work with global counterparties they don't know or explicitly trust, without an intermediary. The most important evolution enabled by Web3 is the minimization of trust required for coordination on a global scale. This marks a move towards trusting all constituents of a network implicitly rather than needing to trust everyone explicitly and/or seeking to achieve trust extrinsically.</p>
+                <p>Decentralized data architecture (Web3) is changing how the web works, moving the internet into a new era, building the path towards common data standards and rules allowing for a decentralized infrastructure to run applications that understand the data.</p>
+                <p>Move away from a centralized internet where big organizations control your data.</p>
+                <p>Unova does not store data but instead provides the infrastructure for companies to use. This is essential for creating global cross border data exchange where companies don't need to trust one organization to manage their data.</p>
+            </div>
         </div>
     </section>
 
     <!-- Multi node type network -->
     <section class="w-full mt-5 py-12 md:py-16 px-8 md:px-12 lg:px-16 bg-white text-gray-900 rounded-[20px]">
-        <h2 class="about-section-heading text-left font-extralight text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-900 mb-8 md:mb-12">
-            Multi node type network
-        </h2>
-        <div class="max-w-8xl mx-auto space-y-6 text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed text-left">
-            <p>Solving two design flaws integral to other public networks:</p>
-        </div>
-        <div class="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-10 md:mt-12">
-            <div class="space-y-4">
-                <h3 class="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900">Limited transactions and data distribution capabilities</h3>
-                <p class="text-base sm:text-lg text-gray-700 leading-relaxed">Given the volume and diversity of data exchanged between independent parties, it is essential that Unova enables timely and reliable data distribution across the network.</p>
+        <div class="max-w-8xl mx-auto">
+            <h2 class="about-section-heading text-left font-extralight text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-900 mb-8 md:mb-12">
+                Multi node type network
+            </h2>
+            <div class="space-y-6 text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed text-left">
+                <p>Solving two design flaws integral to other public networks:</p>
             </div>
-            <div class="space-y-4">
-                <h3 class="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900">Data privacy control</h3>
-                <p class="text-base sm:text-lg text-gray-700 leading-relaxed">Many cryptocurrency transactions don't need privacy, and many blockchain networks aren't designed for privacy. However, a lot of company data is proprietary. Our network allows for immutability, decentralization, and trust, while allowing companies to keep proprietary data to themselves.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-10 md:mt-12">
+                <div class="space-y-4">
+                    <h3 class="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900">Limited transactions and data distribution capabilities</h3>
+                    <p class="text-base sm:text-lg text-gray-700 leading-relaxed">Given the volume and diversity of data exchanged between independent parties, it is essential that Unova enables timely and reliable data distribution across the network.</p>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900">Data privacy control</h3>
+                    <p class="text-base sm:text-lg text-gray-700 leading-relaxed">Many cryptocurrency transactions don't need privacy, and many blockchain networks aren't designed for privacy. However, a lot of company data is proprietary. Our network allows for immutability, decentralization, and trust, while allowing companies to keep proprietary data to themselves.</p>
+                </div>
             </div>
         </div>
     </section>
