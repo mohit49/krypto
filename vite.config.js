@@ -27,6 +27,8 @@ export default defineConfig({
         contactUs: 'about/contact-us.html',
         foundation: 'about/foundation.html',
         support: 'about/support.html',
+        decentralizedAi: 'solutions/decentralized-ai.html',
+        decentralizedFinanceDefi: 'solutions/decentralized-finance-defi.html',
       },
       output: {
         entryFileNames: 'assets/[name]-[hash].js',
