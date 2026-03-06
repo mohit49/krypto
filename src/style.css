@@ -149,7 +149,11 @@
 /* First section responsive adjustments for 1366px screens */
 @media (max-width: 1366px) {
   #hero-content-wrapper {
-    width: 55% !important;
+    width: 60% !important;
+    max-width: 640px;
+  }
+  #unova-center-image {
+    max-height: 60vh;
   }
   #dj-wrapper {
     height: 62vh !important;
