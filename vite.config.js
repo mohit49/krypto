@@ -29,6 +29,8 @@ export default defineConfig({
         support: 'about/support.html',
         decentralizedAi: 'solutions/decentralized-ai.html',
         decentralizedFinanceDefi: 'solutions/decentralized-finance-defi.html',
+        enterpriseConsumerApplications: 'solutions/enterprise-consumer-applications.html',
+        privacyDataTransmission: 'solutions/privacy-data-transmission.html',
       },
       output: {
         entryFileNames: 'assets/[name]-[hash].js',

@@ -3,11 +3,17 @@ export default {
   content: [
     "./index.html",
     "./about/**/*.html",
+    "./solutions/**/*.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   safelist: [
-    { pattern: /^(min-h|h)-\[.+\]$/ },
-    { pattern: /^md:(min-h|h)-\[.+\]$/ },
+    'w-[200px]',
+    'h-[200px]',
+    'w-[280px]',
+    'h-[280px]',
+    'w-[300px]',
+    'w-[360px]',
+    'h-[360px]',
   ],
   theme: {
     extend: {
