@@ -32,6 +32,7 @@ export default defineConfig({
         enterpriseConsumerApplications: 'solutions/enterprise-consumer-applications.html',
         privacyDataTransmission: 'solutions/privacy-data-transmission.html',
         realWorldAssets: 'solutions/real-world-assets.html',
+        web3Infrastructure: 'solutions/web3-infrastructure.html',
       },
       output: {
         entryFileNames: 'assets/[name]-[hash].js',
