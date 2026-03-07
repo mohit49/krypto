@@ -504,11 +504,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleMouseMove(e) {
-      if (!isHeroInView()) return; // Don't parallax when user has scrolled away
-      const rect = canvas.getBoundingClientRect();
-      // Normalize mouse position to -1 to 1
-      mouseX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-      mouseY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      // Parallax disabled: keep grid and images static
+      mouseX = 0;
+      mouseY = 0;
       drawPerspectiveGrid();
       updateImageParallax();
     }
@@ -522,38 +520,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Update image parallax with 3D rotation/skew effect
+    // Update image parallax (disabled: no 3D effect, keep static)
     function updateImageParallax() {
       const unovaImage = document.getElementById('unova-center-image');
       const djImage = document.getElementById('dj-center-image');
-      
-      if (unovaImage) {
-        // 3D rotation based on mouse position
-        const rotateY = mouseX * 15; // Rotate on Y axis (left-right tilt)
-        const rotateX = -mouseY * 10; // Rotate on X axis (up-down tilt)
-        const translateZ = Math.abs(mouseX) * 20 + Math.abs(mouseY) * 20; // Depth movement
-        
-        unovaImage.style.transform = `
-          perspective(1000px) 
-          rotateX(${rotateX}deg) 
-          rotateY(${rotateY}deg) 
-          translateZ(${translateZ}px)
-        `;
-      }
-      
-      if (djImage) {
-        // 3D rotation based on mouse position (same as Unova image)
-        const rotateY = mouseX * 15; // Rotate on Y axis (left-right tilt)
-        const rotateX = -mouseY * 10; // Rotate on X axis (up-down tilt)
-        const translateZ = Math.abs(mouseX) * 20 + Math.abs(mouseY) * 20; // Depth movement
-        
-        djImage.style.transform = `
-          perspective(1000px) 
-          rotateX(${rotateX}deg) 
-          rotateY(${rotateY}deg) 
-          translateZ(${translateZ}px)
-        `;
-      }
+      if (unovaImage) unovaImage.style.transform = '';
+      if (djImage) djImage.style.transform = '';
     }
 
     // Initialize
@@ -565,22 +537,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('scroll', resetParallaxWhenScrolledAway, { passive: true });
 
-    // Touch support for mobile (only when hero in view)
-    window.addEventListener('touchmove', (e) => {
-      if (!isHeroInView()) {
-        mouseX = 0;
-        mouseY = 0;
-        drawPerspectiveGrid();
-        updateImageParallax();
-        return;
-      }
-      if (e.touches.length > 0) {
-        const rect = canvas.getBoundingClientRect();
-        mouseX = ((e.touches[0].clientX - rect.left) / rect.width - 0.5) * 2;
-        mouseY = ((e.touches[0].clientY - rect.top) / rect.height - 0.5) * 2;
-        drawPerspectiveGrid();
-        updateImageParallax();
-      }
+    // Touch support for mobile (parallax disabled: keep static)
+    window.addEventListener('touchmove', () => {
+      mouseX = 0;
+      mouseY = 0;
+      drawPerspectiveGrid();
+      updateImageParallax();
     });
   }
 });
