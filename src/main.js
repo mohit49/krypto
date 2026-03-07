@@ -1,7 +1,14 @@
 import './style.css'
 
-// Mobile menu: side panel slides in from right
+// Hero video: ensure autoplay on load (desktop center + mobile in DJ slot; some browsers need explicit play())
 document.addEventListener('DOMContentLoaded', () => {
+  const heroVideo = document.getElementById('unova-center-image');
+  const heroVideoMobile = document.getElementById('unova-center-image-mobile');
+  [heroVideo, heroVideoMobile].forEach((el) => {
+    if (el && typeof el.play === 'function') el.play().catch(() => {});
+  });
+
+  // Mobile menu: side panel slides in from right
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');

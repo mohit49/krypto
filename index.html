@@ -227,7 +227,7 @@
           })();
         </script>
 
-        <!-- Hero Content (hidden on mobile; left/DJ/right stack on mobile) -->
+        <!-- Hero Content (desktop only: centered overlay) -->
         <div id="hero-content-wrapper" class="absolute top-[20%] left-1/2 -translate-x-1/2 z-20 w-[52%] max-w-[540px] max-xl:hidden">
             <div class="w-full hero-content">
                 <video id="unova-center-image" class="w-full h-auto max-h-[52vh] mx-auto object-contain [mix-blend-mode:lighten]" autoplay muted loop playsinline aria-label="Unova">
@@ -236,12 +236,16 @@
             </div>
         </div>
 
-        <!-- DJ Image at Bottom (on mobile: order 2, relative; on xl: absolute centered) -->
+        <!-- DJ / Video slot (on mobile: video in place of DJ; on xl: empty) -->
         <div id="dj-wrapper" class="relative order-2 flex justify-center items-end max-xl:h-[50vh] max-xl:shrink-0 xl:absolute xl:order-none xl:bottom-0 xl:left-1/2 xl:-translate-x-1/2 xl:flex-none xl:h-[70vh] z-20" style="perspective: 1000px;">
-            <!-- UNOVA logo behind DJ on mobile only -->
-            <img src="./assets/unova-center-text.png" alt="" class="absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 max-w-[85%] max-h-[60%] w-auto h-auto object-contain opacity-90 max-xl:block xl:hidden pointer-events-none z-0" aria-hidden="true">
-            <!-- DJ image: visible on mobile only -->
-            <img id="dj-center-image" src="./assets/ceter-dj.png" alt="DJ" class="relative z-10 h-full w-auto max-xl:block xl:hidden max-xl:object-contain">
+            <!-- UNOVA logo behind on mobile only -->
+            <img src="./assets/unova-center-text.png" alt="" class="absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 max-w-[85%] max-h-[60%] w-auto h-auto object-contain opacity-90 hidden pointer-events-none z-0" aria-hidden="true">
+            <!-- Video on mobile (in place of DJ) -->
+            <video id="unova-center-image-mobile" class="relative z-10 h-full w-auto max-h-full object-contain max-xl:block xl:hidden [mix-blend-mode:lighten]" autoplay muted loop playsinline aria-label="Unova">
+                <source src="./assets/Header.webm" type="video/webm">
+            </video>
+            <!-- DJ image: desktop only (hidden; video used on mobile) -->
+            <img id="dj-center-image" src="./assets/ceter-dj.png" alt="DJ" class="relative z-10 h-full w-auto object-contain max-xl:hidden xl:hidden">
         </div>
 
         <!-- Left Bottom Text (on mobile: order 1, top; on xl: absolute bottom-left) -->
