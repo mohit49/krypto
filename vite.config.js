@@ -34,6 +34,7 @@ export default defineConfig({
         realWorldAssets: 'solutions/real-world-assets.html',
         web3Infrastructure: 'solutions/web3-infrastructure.html',
         ecosystemBuilders: 'community/ecosystem-builders.html',
+        unovaIncubationHub: 'community/unova-incubation-hub.html',
       },
       output: {
         entryFileNames: 'assets/[name]-[hash].js',
