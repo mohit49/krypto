@@ -33,6 +33,7 @@ export default defineConfig({
         privacyDataTransmission: 'solutions/privacy-data-transmission.html',
         realWorldAssets: 'solutions/real-world-assets.html',
         web3Infrastructure: 'solutions/web3-infrastructure.html',
+        ecosystemBuilders: 'community/ecosystem-builders.html',
       },
       output: {
         entryFileNames: 'assets/[name]-[hash].js',
