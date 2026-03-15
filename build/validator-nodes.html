@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unova Incubation Hub - Unova</title>
+    <title>Validator Nodes - Unova</title>
     <link rel="stylesheet" href="https://use.typekit.net/ion1ndn.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <style>
@@ -27,9 +27,9 @@
 </head>
 
 <body class="bg-[#262626] min-h-full m-0 p-[15px]">
-    <section class="w-full min-h-0 h-auto flex flex-col bg-white rounded-[20px] relative overflow-hidden">
+    <section class="w-full min-h-screen flex flex-col bg-[#c0d4ff] relative overflow-hidden rounded-[10px]">
         <!-- Header -->
-        <header class="w-full relative z-[100] order-0">
+        <header class="w-full relative z-[100] order-0 rounded-t-[10px] bg-[#c0d4ff]">
             <nav class="relative w-full px-8 md:px-12 lg:px-16 xl:px-24 py-4">
                 <div class="relative w-full" id="nav-mega-wrapper">
                     <div class="flex items-center justify-between">
@@ -47,10 +47,10 @@
                                     class="nav-mega-trigger text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-sm md:text-base lg:text-lg uppercase py-4 block"
                                     data-mega="mega-solution">Solution</a>
                                 <a href="../index.html#community"
-                                    class="nav-mega-trigger mega-link-active text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-sm md:text-base lg:text-lg uppercase py-4 block"
+                                    class="nav-mega-trigger text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-sm md:text-base lg:text-lg uppercase py-4 block"
                                     data-mega="mega-community">Community</a>
                                 <a href="../index.html#build"
-                                    class="nav-mega-trigger text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-sm md:text-base lg:text-lg uppercase py-4 block"
+                                    class="nav-mega-trigger mega-link-active text-gray-700 hover:text-blue-600 transition-colors duration-200 font-bold text-sm md:text-base lg:text-lg uppercase py-4 block"
                                     data-mega="mega-build">Build</a>
                             </div>
                         </div>
@@ -71,9 +71,9 @@
                             <button id="mobile-menu-button" type="button" aria-expanded="false"
                                 aria-controls="mobile-menu"
                                 class="bg-gray-800 text-white hover:bg-gray-700 focus:outline-none p-2 rounded-lg">
-                                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                    stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16" />
                                 </svg>
                             </button>
                         </div>
@@ -111,30 +111,30 @@
                             </div>
                             <div id="mega-solution"
                                 class="mega-panel hidden bg-white rounded-xl shadow-xl border-2 border-[#f1f1f1] py-4 px-4 grid grid-cols-2 min-[900px]:grid-cols-3 min-[1170px]:grid-cols-6 gap-4">
-                                <a href="../solutions/decentralized-finance-defi.html"
+                                <a href="./decentralized-finance-defi.html"
                                     class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img
                                         src="../assets/dcen-sol.png" alt=""
                                         class="w-10 h-10 object-contain mb-2"><span>Decentralized Finance
                                         (DeFi)</span></a>
-                                <a href="../solutions/enterprise-consumer-applications.html"
+                                <a href="./enterprise-consumer-applications.html"
                                     class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img
                                         src="../assets/enter-sol.png" alt=""
                                         class="w-10 h-10 object-contain mb-2"><span>Enterprise & Consumer Apps (Supply
                                         Chain)</span></a>
-                                <a href="../solutions/real-world-assets.html"
+                                <a href="./real-world-assets.html"
                                     class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img
                                         src="../assets/real-sol.png" alt=""
                                         class="w-10 h-10 object-contain mb-2"><span>Real World Assets (RWA)</span></a>
-                                <a href="../solutions/privacy-data-transmission.html"
+                                <a href="./privacy-data-transmission.html"
                                     class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img
                                         src="../assets/privacy-sol.png" alt=""
                                         class="w-10 h-10 object-contain mb-2"><span>Privacy Data Transmission</span></a>
-                                <a href="../solutions/decentralized-ai.html"
+                                <a href="./decentralized-ai.html"
                                     class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img
                                         src="../assets/enter-sol.png" alt=""
                                         class="w-10 h-10 object-contain mb-2"><span>Decentralized AI and autonomous
                                         operational decision-making</span></a>
-                                <a href="../solutions/web3-infrastructure.html"
+                                <a href="./web3-infrastructure.html"
                                     class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img
                                         src="../assets/unova-infra.png" alt=""
                                         class="w-10 h-10 object-contain mb-2"><span>Unova Web3 Infrastructure</span></a>
@@ -162,11 +162,11 @@
                                         <path
                                             d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
                                     </svg><span>Discord Community</span></a>
-                                <a href="./ecosystem-builders.html"
+                                <a href="../community/ecosystem-builders.html"
                                     class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img
                                         src="../assets/icon-eco-system.png" alt=""
                                         class="w-10 h-10 object-contain mb-2"><span>Ecosystem Builders</span></a>
-                                <a href="./unova-incubation-hub.html"
+                                <a href="../community/unova-incubation-hub.html"
                                     class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img
                                         src="../assets/unova-cum.png" alt=""
                                         class="w-10 h-10 object-contain mb-2"><span>Unova Incubation Hub</span></a>
@@ -189,7 +189,7 @@
                                     class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img
                                         src="../assets/grants-build.png" alt=""
                                         class="w-10 h-10 object-contain mb-2"><span>Grants (Coming Soon)</span></a>
-                                <a href="../build/uon-token.html"
+                                <a href="../index.html#build"
                                     class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img
                                         src="../assets/uno-token-build.png" alt=""
                                         class="w-10 h-10 object-contain mb-2"><span>The UON Token</span></a>
@@ -258,19 +258,19 @@
                     <div id="mobile-accordion-solution" class="mobile-accordion-body hidden overflow-hidden"
                         role="region" aria-label="Solution submenu">
                         <div class="pb-3 pl-1 flex flex-col space-y-2">
-                            <a href="../solutions/decentralized-finance-defi.html"
+                            <a href="./decentralized-finance-defi.html"
                                 class="text-gray-300 hover:text-white text-sm py-1.5">Decentralized Finance (DeFi)</a>
-                            <a href="../solutions/enterprise-consumer-applications.html"
+                            <a href="./enterprise-consumer-applications.html"
                                 class="text-gray-300 hover:text-white text-sm py-1.5">Enterprise &amp; Consumer Apps
                                 (Supply Chain)</a>
-                            <a href="../solutions/real-world-assets.html"
+                            <a href="./real-world-assets.html"
                                 class="text-gray-300 hover:text-white text-sm py-1.5">Real World Assets (RWA)</a>
-                            <a href="../solutions/privacy-data-transmission.html"
+                            <a href="./privacy-data-transmission.html"
                                 class="text-gray-300 hover:text-white text-sm py-1.5">Privacy Data Transmission</a>
-                            <a href="../solutions/decentralized-ai.html"
+                            <a href="./decentralized-ai.html"
                                 class="text-gray-300 hover:text-white text-sm py-1.5">Decentralized AI and autonomous
                                 operational decision-making</a>
-                            <a href="../solutions/web3-infrastructure.html"
+                            <a href="./web3-infrastructure.html"
                                 class="text-gray-300 hover:text-white text-sm py-1.5">Unova Web3 Infrastructure</a>
                         </div>
                     </div>
@@ -293,9 +293,9 @@
                             <a href="https://x.com/unova_io" target="_blank" rel="noopener noreferrer"
                                 class="text-gray-300 hover:text-white text-sm py-1.5">X Community</a>
                             <a href="#" class="text-gray-300 hover:text-white text-sm py-1.5">Discord Community</a>
-                            <a href="./ecosystem-builders.html"
+                            <a href="../community/ecosystem-builders.html"
                                 class="text-gray-300 hover:text-white text-sm py-1.5">Ecosystem Builders</a>
-                            <a href="./unova-incubation-hub.html"
+                            <a href="../community/unova-incubation-hub.html"
                                 class="text-gray-300 hover:text-white text-sm py-1.5">Unova Incubation Hub</a>
                         </div>
                     </div>
@@ -313,15 +313,15 @@
                     <div id="mobile-accordion-build" class="mobile-accordion-body hidden overflow-hidden" role="region"
                         aria-label="Build submenu">
                         <div class="pb-3 pl-1 flex flex-col space-y-2">
-                            <a href="../build/unova-testnet.html" class="text-gray-300 hover:text-white text-sm py-1.5">Unova
+                            <a href="../index.html#build" class="text-gray-300 hover:text-white text-sm py-1.5">Unova
                                 Testnet</a>
-                            <a href="../build/unova-nop.html" class="text-gray-300 hover:text-white text-sm py-1.5">Unova
+                            <a href="../index.html#build" class="text-gray-300 hover:text-white text-sm py-1.5">Unova
                                 NOP</a>
-                            <a href="../build/validator-nodes.html"
+                            <a href="../index.html#build"
                                 class="text-gray-300 hover:text-white text-sm py-1.5">Validator Nodes</a>
                             <a href="../index.html#build" class="text-gray-300 hover:text-white text-sm py-1.5">Grants
                                 (Coming Soon)</a>
-                            <a href="../build/uon-token.html" class="text-gray-300 hover:text-white text-sm py-1.5">The UON
+                            <a href="../index.html#build" class="text-gray-300 hover:text-white text-sm py-1.5">The UON
                                 Token</a>
                             <a href="https://explorertest.unova.io/" target="_blank" rel="noopener noreferrer"
                                 class="text-gray-300 hover:text-white text-sm py-1.5">Unova Testnet Explorer</a>
@@ -353,6 +353,9 @@
                 function setActiveLink(link) {
                     triggers.forEach(function (a) { a.classList.toggle('mega-link-active', a === link); });
                 }
+                function clearActiveLink() {
+                    triggers.forEach(function (a) { a.classList.remove('mega-link-active'); });
+                }
                 triggers.forEach(function (a) {
                     a.addEventListener('mouseenter', function () {
                         var id = a.getAttribute('data-mega');
@@ -368,281 +371,141 @@
                         var related = e.relatedTarget;
                         if (!related || !wrapper.contains(related)) {
                             wrapper.classList.remove('mega-menu-open');
-                            if (window.__setNavActiveFromPage) window.__setNavActiveFromPage(); else { showPanel('mega-community'); setActiveLink(document.querySelector('[data-mega="mega-community"]')); }
+                            showPanel('mega-solution');
+                            setActiveLink(document.querySelector('[data-mega="mega-solution"]'));
                         }
                     });
                 }
-                if (window.__setNavActiveFromPage) window.__setNavActiveFromPage(); else { showPanel('mega-community'); setActiveLink(document.querySelector('[data-mega="mega-community"]')); }
+                showPanel('mega-solution');
+                setActiveLink(document.querySelector('[data-mega="mega-solution"]'));
             })();
         </script>
 
-        <!-- Unova Incubation Hub page content -->
-        <main class="flex-1 px-8 md:px-12 lg:px-16 py-12 md:py-16">
-            <div class="max-w-8xl mx-auto">
-                <h1
-                    class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 uppercase tracking-wide mb-4 md:mb-6 text-center">
-                    Unova Incubation Hub</h1>
-                <div class="w-full md:max-w-2xl md:w-[672px] mx-auto mb-6 md:mb-8 px-2">
-                    <p class="text-xl md:text-[40px] font-light text-gray-900 text-center leading-snug">The Unova
-                        Incubation Hub supports early-stage teams and organizations building solutions on top of the
-                        Unova infrastructure.</p>
-                </div>
-                <div class="w-full mb-6 md:mb-8">
-                    <img src="../assets/first-banner-community.png"
-                        alt="Unova Incubation Hub community and co-working space"
-                        class="w-full h-auto object-cover rounded-xl">
-                </div>
-                <div
-                    class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8 pl-4 pr-4 md:pl-6 md:pr-6">
-                    <div class="w-full min-w-0">
-                        <p class="text-gray-900 text-base md:text-lg leading-relaxed">Its purpose is to help transform
-                            promising concepts into operational deployments that demonstrate real-world value. The Hub
-                            focuses on initiatives that strengthen the ecosystem through practical implementation,
-                            technical rigor, and long-term alignment.</p>
+        <!-- Hero / first section -->
+        <main
+            class="flex-1 flex flex-col justify-center items-center bg-[#c0d4ff] px-8 md:px-12 lg:px-16 py-12 md:py-16 min-h-0 relative overflow-hidden">
+            <img src="../assets/box-build.png" alt=""
+                class="absolute bottom-0 right-0 w-full max-w-[min(100%,880px)] h-auto object-contain object-bottom object-right pointer-events-none z-0"
+                aria-hidden="true">
+            <div class="max-w-8xl max-md:w-full mx-auto relative z-10">
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <!-- Column 1: Heading, subheading, sub text -->
+                    <div class="flex flex-col gap-4 md:gap-6">
+                        <h1
+                            class="text-3xl sm:text-4xl md:text-5xl lg:text-[100px] font-extralight text-gray-900 leading-[100%]">
+                            Validator <br>Nodes
+                        </h1>
+                        <div class="flex flex-col gap-4 text-base sm:text-lg text-gray-700 leading-relaxed">
+                            <p class="text-gray-800 text-base sm:text-lg md:text-xl font-light leading-relaxed">
+                                <i>Validator nodes play a critical role in maintaining the integrity,
+                                    reliability, and security of the Unova network.</i>
+                            </p>
+
+                            <p class="text-gray-800 text-base sm:text-lg md:text-xl font-light leading-relaxed mt-4">
+                                <i>Validators are responsible for processing transactions,
+                                    validating execution, and ensuring that network activity is
+                                    recorded accurately and consistently. By operating independently,
+                                    validators contribute to the neutrality and resilience
+                                    of the infrastructure.</i>
+                            </p>
+                        </div>
                     </div>
-                    <div class="w-full min-w-0">
-                        <p class="text-gray-900 text-2xl md:text-3xl font-bold leading-snug whitespace-pre-line">The
-                            goal is not rapid experimentation
-                            at scale, but the development of
-                            durable solutions that can operate
-                            across organizational boundaries.</p>
+                    <!-- Column 2: placeholder (image removed) -->
+                    <div
+                        class="w-full flex items-center justify-center min-h-[200px] sm:min-h-[250px] md:min-h-[280px] lg:min-h-[320px]">
                     </div>
                 </div>
             </div>
         </main>
     </section>
 
-    <!-- Our Approach section -->
+    <!-- Role of Validators-->
     <section class="w-full mt-5 py-12 md:py-16 px-8 md:px-12 lg:px-16 bg-white text-gray-900 rounded-[20px]">
         <div class="max-w-8xl mx-auto">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extralight text-gray-900 mb-8 md:mb-12"
-                style="font-weight: 200;">Our Approach</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                <div>
-                    <p class="text-base sm:text-lg md:text-xl text-gray-600 font-light leading-relaxed mb-6">The Unova
-                        Incubation Hub is designed around one principle: real-world execution matters more than
-                        prototypes.</p>
-
-                </div>
-                <div>
-                    <p class="text-base sm:text-lg md:text-xl text-gray-600 font-light leading-relaxed">The Foundation
-                        acts as a steward rather than an operator. It does not function as a platform provider, service
-                        vendor, or application developer.</p>
-                </div>
-            </div>
-            <p class="text-base sm:text-lg md:text-xl text-gray-900 font-light leading-relaxed mt-10 md:mt-12 mb-6">We
-                support teams that:</p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                <div class="rounded-xl p-6 md:p-8 text-white" style="background-color: #000000;">
-                    <p class="text-base md:text-lg font-light italic leading-relaxed">Address operational challenges
-                        involving multiple independent parties</p>
-                </div>
-                <div class="rounded-xl p-6 md:p-8 text-white" style="background-color: #000000;">
-                    <p class="text-base md:text-lg font-light italic leading-relaxed">Build solutions that require
-                        trust-minimized execution or verifiable outcomes</p>
-                </div>
-                <div class="rounded-xl p-6 md:p-8 text-white" style="background-color: #000000;">
-                    <p class="text-base md:text-lg font-light italic leading-relaxed">Focus on production readiness
-                        rather than experimentation alone</p>
-                </div>
-                <div class="rounded-xl p-6 md:p-8 text-white" style="background-color: #000000;">
-                    <p class="text-base md:text-lg font-light italic leading-relaxed">Align with long-term
-                        infrastructure use rather than short-term applications</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- What we provide section -->
-    <section class="w-full mt-5 py-12 md:py-16 px-8 md:px-12 lg:px-16 text-gray-900 rounded-[20px]" style="background-color: #1e9ffa;">
-        <div class="max-w-8xl mx-auto">
-
-           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-end"> 
-            <h2 class="text-5xl md:text-7xl lg:text-[100px] max-[1280px]:text-3xl max-[1280px]:md:text-5xl max-[1280px]:lg:text-[56px] font-extralight text-white"
-                style="font-weight: 300;">What<br class="hidden md:block"> We Provide</h2>
-
-            <div>
-                <p class="text-base sm:text-lg md:text-xl text-white font-light leading-relaxed">Selected teams may receive structured support,<br> including:</p>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-
-            <div>
-              <p class="text-white sm:text-lg md:text-xl font-light leading-relaxed mt-10 md:mt-12 mb-6">
-                Technical Guidance
-              </p>
-          
-              <ul class="list-disc list-outside pl-6 space-y-3 text-white sm:text-lg md:text-xl font-light leading-relaxed marker:text-white">
-                <li>Architectural support for building on the Unova infrastructure</li>
-                <li>Integration and implementation guidance</li>
-                <li>Access to documentation and technical resources</li>
-              </ul>
-            </div>
-          
-            <div>
-              <p class="text-white sm:text-lg md:text-xl font-light leading-relaxed mt-10 md:mt-12 mb-6">
-                Strategic Support
-              </p>
-          
-              <ul class="list-disc list-outside pl-6 space-y-3 text-white sm:text-lg md:text-xl font-light leading-relaxed marker:text-white">
-                <li>Use-case validation and operational design</li>
-                <li>Alignment with ecosystem priorities</li>
-                <li>Guidance on deployment pathways and stakeholder engagement</li>
-              </ul>
-            </div>
-          
-            <div>
-              <p class="text-white sm:text-lg md:text-xl font-light leading-relaxed mt-10 md:mt-12 mb-6">
-                Funding Opportunities
-              </p>
-          
-              <ul class="list-disc list-outside pl-6 space-y-3 text-white sm:text-lg md:text-xl font-light leading-relaxed marker:text-white">
-                <li>Eligibility for grants through the Unova Foundation</li>
-                <li>Support in preparing grant applications</li>
-                <li>Alignment with available funding programs</li>
-              </ul>
-            </div>
-          
-            <div>
-              <p class="text-white sm:text-lg md:text-xl font-light leading-relaxed mt-10 md:mt-12 mb-6">
-                Ecosystem Access
-              </p>
-          
-              <ul class="list-disc list-outside pl-6 space-y-3 text-white sm:text-lg md:text-xl font-light leading-relaxed marker:text-white">
-                <li>Introductions to relevant partners and contributors</li>
-                <li>Opportunities to collaborate with other teams in the ecosystem</li>
-              </ul>
-            </div>
-          
-          </div>
-          <p class="text-white sm:text-lg md:text-xl font-light leading-relaxed mt-10 md:mt-12 mb-6"><i>Support is tailored to the needs and maturity of each project.</i></p>
-               
-        </div>
-    </section>
-
-  <!-- Who should apply -->
-    <section class="w-full mt-5 py-12 md:py-16 px-8 md:px-12 lg:px-16 rounded-[20px]" style="background-color: #333333;">
-        <div class="max-w-7xl mx-auto">
-
-            <div class="grid grid-cols-1 md:grid-cols-2 items-start">
-
-                <!-- Left Heading -->
-                <h2 class="text-5xl md:text-7xl lg:text-[100px] max-[1280px]:text-3xl max-[1280px]:md:text-5xl max-[1280px]:lg:text-[56px] font-extralight text-white mb-6">
-                    Who Should <br class="hidden md:block"> Apply
-                </h2>
-
-                <!-- Right Content -->
-                <div class="space-y-6">
-
-                    <!-- Card 1 -->
-                    <div class="border border-gray-500 rounded-xl p-6 text-white">
-                        <p class="text-lg md:text-xl font-light mb-4">
-                           <b> The Unova Incubation Hub is intended for:</b>
-                        </p>
-
-                        <ul
-                            class="list-disc list-outside pl-6 space-y-2 text-gray-300 text-sm md:text-base leading-relaxed">
-                            <li>Startups building infrastructure-enabled solutions</li>
-                            <li>Enterprises exploring cross-organizational execution models</li>
-                            <li>Research teams developing applied technologies</li>
-                            <li>Independent builders with a clearly defined operational use case</li>
-                        </ul>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="border border-gray-500 rounded-xl p-6 text-white">
-                        <p class="text-lg md:text-xl font-light mb-4">
-                            <b>We prioritize teams that demonstrate:</b>
-                        </p>
-
-                        <ul
-                            class="list-disc list-outside pl-6 space-y-2 text-gray-300 text-sm md:text-base leading-relaxed">
-                            <li>A clear problem with real operational impact</li>
-                            <li>Technical or domain expertise</li>
-                            <li>Commitment to building toward production deployment</li>
-                        </ul>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- Two column sections: Focus Areas and Selection Process -->
-    <div class="mt-5 ">
-        <div class="mx-auto flex flex-col md:flex-row gap-[10px]">
-            <!-- Column 1: Focus Areas -->
-            <div class="w-full md:w-1/2 bg-white rounded-[20px] p-8 md:p-12 flex flex-col gap-6">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extralight text-gray-900" style="font-weight: 200;">
-                    Focus Areas</h2>
-                <p class="text-base sm:text-lg md:text-xl text-gray-600 font-light leading-relaxed">The Hub supports
-                    initiatives that strengthen the ecosystem in areas such as:</p>
-                <ul
-                    class="list-disc list-inside space-y-3 text-base sm:text-lg md:text-xl text-gray-600 font-light leading-relaxed pl-2 [&_li::marker]:text-blue-600">
-                    <li>Cross-organizational execution workflows</li>
-                    <li>AI-enabled operational automation</li>
-                    <li>Privacy-preserving data exchange</li>
-                    <li>Compliance and auditability solutions</li>
-                    <li>Infrastructure tooling and developer resources</li>
+            <h2
+                class="about-section-heading text-left font-extralight text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-900 mb-6 md:mb-8">
+                Role of Validators
+            </h2>
+            <div class="space-y-6 text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed text-left">
+                <p>Validators support the network by:
+                </p>
+                <ul class="list-disc list-outside space-y-3 text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed pl-6 col-maker">
+                    <li>Verifying transactions and execution results</li>
+                    <li>Maintaining consensus across the network</li>
+                    <li>Ensuring data integrity and availability</li>
+                    <li>Supporting reliable and deterministic operation</li>
                 </ul>
-                <p class="text-base sm:text-lg md:text-xl text-gray-600 font-light leading-relaxed mt-2">These focus
-                    areas reflect long-term ecosystem needs rather than short-term trends.</p>
+                <p>The distributed validator structure ensures that no single entity controls network execution.</p>
             </div>
-            <!-- Column 2: Selection Process -->
-            <div class="w-full md:w-1/2 bg-white rounded-[20px] p-8 md:p-12 flex flex-col gap-6">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extralight text-gray-900" style="font-weight: 200;">
-                    Selection Process</h2>
-                <p class="text-base sm:text-lg md:text-xl text-gray-600 font-light leading-relaxed">Applications are
-                    reviewed based on:</p>
-                <ul
-                    class="list-disc list-inside space-y-3 text-base sm:text-lg md:text-xl text-gray-600 font-light leading-relaxed pl-2 [&_li::marker]:text-blue-600">
-                    <li>Strategic alignment with the Unova ecosystem</li>
-                    <li>Technical feasibility</li>
-                    <li>Operational relevance and real-world applicability</li>
-                    <li>Long-term sustainability</li>
+        </div>
+    </section>
+        
+             <!-- Row 2: Smart Contracts + second tile -->
+             <div class="w-full mt-5 flex flex-col md:flex-row gap-[10px]">
+                <!-- Tile 3: Smart Contracts Without Data Exposure -->
+                <div class="w-full md:w-1/2 bg-[#0053ff] rounded-[20px] p-8 md:p-12 flex flex-col gap-6">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extralight text-white" style="font-weight: 200;">Who Can Become a<br> Validator?</h2>
+                    <p class="text-base sm:text-lg md:text-xl text-white font-light leading-relaxed">Validator participation is open to organizations and technical operators with the capability to maintain secure and reliable infrastructure.
+                      <br><br>  Typical participants include:</p>
+                    <ul class="list-disc list-outside space-y-3 text-base sm:text-lg md:text-xl text-white/90 font-light leading-relaxed pl-6 [&_li::marker]:text-white">
+                        <li>Infrastructure providers</li>
+                        <li>Technology companies</li>
+                        <li>Enterprise IT operators</li>
+                        <li>Institutional participants</li>
+                        <li>Independent professional node operators</li>
+                    </ul>
+                    <p class="text-base sm:text-lg md:text-xl text-white font-light leading-relaxed">Validators are expected to maintain high operational standards and long-term network participation.</p>
+                </div>
+                <!-- Tile 4: Built for Scale, Coordination, and Adoption -->
+                <div class="w-full md:w-1/2 bg-white rounded-[20px] p-8 md:p-12 flex flex-col gap-6">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extralight text-gray-900" style="font-weight: 200;">Requirements</h2>
+                  <p class="text-base sm:text-lg md:text-xl text-gray-800 font-light leading-relaxed">Running a validator node requires:</p>
+                  <ul class="list-disc list-outside space-y-3 text-base sm:text-lg md:text-xl text-gray-800 font-light leading-relaxed pl-6 col-maker">
+                    <li>VReliable server infrastructure and network connectivity</li>
+                    <li>Technical expertise in node deployment and maintenance</li>
+                    <li>Continuous monitoring and uptime management</li>
+                    <li>Alignment with Unova network policies and operational guidelines</li>
                 </ul>
-                <p class="text-base sm:text-lg md:text-xl text-gray-600 font-light leading-relaxed mt-2">The Incubation
-                    Hub works with a limited number of teams at any given time to ensure focused support.</p>
+                   <p class="text-base sm:text-lg md:text-xl text-gray-800 font-light leading-relaxed">Detailed technical specifications and setup documentation are available upon request.</p>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <!-- From Incubation to Deployment section -->
-    <section class="w-full mt-5 py-12 md:py-16 px-8 md:px-12 lg:px-16 bg-white text-gray-900 rounded-[20px]">
+
+    <!-- Network Configuration section -->
+    <section class="w-full mt-5 py-12 md:py-16 px-8 md:px-12 lg:px-16 text-white-900 rounded-[20px]"
+        style="background-color: #c0d4ff;">
         <div class="max-w-8xl mx-auto">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extralight text-gray-900 mb-8 md:mb-12"
-                style="font-weight: 200;">From Incubation to Deployment</h2>
-            <p class="text-base sm:text-lg md:text-xl text-gray-600 font-light leading-relaxed mb-6">The objective of
-                the Unova Incubation Hub is not experimentation alone, but real deployment. Successful projects are
-                expected to:</p>
-            <ul
-                class="list-disc list-inside space-y-3 text-base sm:text-lg md:text-xl text-gray-600 font-light leading-relaxed pl-2 [&_li::marker]:text-blue-600">
-                <li>Move from concept to operational implementation</li>
-                <li>Demonstrate measurable real-world execution</li>
-                <li>Contribute to the credibility and growth of the ecosystem</li>
-            </ul>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extralight text-gray-800 mb-8 md:mb-12"
+                style="font-weight: 200;">Incentives and Responsibilities</h2>
+            <p class="text-gray-800 mb-6">Validators contribute to network stability and, where applicable, may receive incentives linked to network participation and performance.
+                <br><br>In return, validators are expected to:</p>
+
+            <ul class="list-disc list-outside pl-6 space-y-3 text-base sm:text-lg md:text-xl text-gray-800 leading-relaxed col-maker mb-6">
+                <li>Maintain high availability and performance</li>
+                <li>Operate securely and responsibly</li>
+                <li>Follow network governance and operational rules</li>
+              </ul>
+
+            <p class="text-gray-800 text-3xl sm:text-4xl md:text-5xl text-sm md:text-base font-light leading-relaxed">The validator role is intended for long-term participants committed to the stability of the ecosystem.</p>    
         </div>
     </section>
 
-    <!-- Relationship with the Foundation section -->
-    <section class="w-full mt-5 py-12 md:py-16 px-8 md:px-12 lg:px-16 text-white rounded-[20px]"
-        style="background-color: #1e7bfa;">
-        <div class="max-w-8xl mx-auto">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extralight text-white mb-8 md:mb-12"
-                style="font-weight: 200;">Relationship with the Foundation</h2>
-            <p class="text-base sm:text-lg md:text-xl text-white/90 font-light leading-relaxed mb-6">The Unova
-                Incubation Hub operates in alignment with the mission of the Unova Foundation.</p>
-            <p class="text-base sm:text-lg md:text-xl text-white/90 font-light leading-relaxed mb-6">The Foundation may
-                provide grant funding to eligible projects, subject to its governance processes and available resources.
-            </p>
-            <p class="text-base sm:text-lg md:text-xl text-white/90 font-light leading-relaxed">Participation in the
-                Incubation Hub does not automatically guarantee funding.</p>
-        </div>
-    </section>
+    <section class="w-full py-12 px-6 text-center bg-gradient-to-r from-[#2f2f2f] to-[#3a3a3a] rounded-[20px]">
+  
+        <h3 class="text-white text-2xl md:text-3xl font-semibold mb-6">
+           Getting Started
+        </h3>
+      
+        <p class="text-white text-sm md:text-base font-light leading-relaxed mb-6">
+            Organizations interested in operating a validator node can contact the Unova team for onboarding information, technical<br> documentation, and current participation requirements.
+        </p>
+        <span class="text-white text-sm md:text-base font-light leading-relaxed mb-4">Contact:</span><br>
+        
+        <a href="mailto:support@unova.io" class="underline text-sm md:text-base font-light" style="color: #2ea6fd;">
+           support@unova.io
+        </a>
+      
+      </section>
 
     <!-- Footer -->
     <footer class="w-full py-12 md:py-16">
@@ -668,22 +531,22 @@
                 <div>
                     <h3 class="text-white font-semibold text-[25px] max-md:text-[13px] mb-4">Solutions</h3>
                     <ul class="space-y-3 max-md:space-y-0 max-md:mt-[5px] [&>li]:max-md:my-0">
-                        <li><a href="../solutions/decentralized-finance-defi.html"
+                        <li><a href="./decentralized-finance-defi.html"
                                 class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Decentralized
                                 Finance (DeFi)</a></li>
-                        <li><a href="../solutions/enterprise-consumer-applications.html"
+                        <li><a href="./enterprise-consumer-applications.html"
                                 class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Enterprise
                                 & Consumer Apps (Supply Chain)</a></li>
-                        <li><a href="../solutions/real-world-assets.html"
+                        <li><a href="./real-world-assets.html"
                                 class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Real
                                 World Assets (RWA)</a></li>
-                        <li><a href="../solutions/privacy-data-transmission.html"
+                        <li><a href="./privacy-data-transmission.html"
                                 class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Privacy
                                 Data Transmission</a></li>
-                        <li><a href="../solutions/decentralized-ai.html"
+                        <li><a href="./decentralized-ai.html"
                                 class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Decentralized
                                 AI and autonomous operational decision-making</a></li>
-                        <li><a href="../solutions/web3-infrastructure.html"
+                        <li><a href="./web3-infrastructure.html"
                                 class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova
                                 Web3 Infrastructure</a></li>
                     </ul>
@@ -700,10 +563,10 @@
                         <li><a href="#"
                                 class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Discord
                                 Community</a></li>
-                        <li><a href="./ecosystem-builders.html"
+                        <li><a href="../community/ecosystem-builders.html"
                                 class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Ecosystem
                                 Builders</a></li>
-                        <li><a href="./unova-incubation-hub.html"
+                        <li><a href="../community/unova-incubation-hub.html"
                                 class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova
                                 Incubation Hub</a></li>
                     </ul>
@@ -717,13 +580,13 @@
                         <li><a href="../build/unova-nop.html"
                                 class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova
                                 NOP</a></li>
-                        <li><a href="../build/validator-nodes.html"
+                        <li><a href="../index.html#build"
                                 class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Validator
                                 Nodes</a></li>
                         <li><a href="../index.html#build"
                                 class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Grants
                                 (Coming Soon)</a></li>
-                        <li><a href="../build/uon-token.html"
+                        <li><a href="../index.html#build"
                                 class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">The
                                 UON Token</a></li>
                         <li><a href="https://explorertest.unova.io/" target="_blank" rel="noopener noreferrer"
@@ -736,6 +599,7 @@
                 All rights reserved.</p>
         </div>
     </footer>
-</body>
 
+</body>
+  
 </html>

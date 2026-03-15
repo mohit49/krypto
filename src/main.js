@@ -1,7 +1,39 @@
 import './style.css'
 
+// Active nav: set from current pathname so it works in build folder and all pages
+function getCurrentSection() {
+  const p = (typeof window !== 'undefined' && window.location.pathname) ? window.location.pathname : '';
+  const path = p.toLowerCase();
+  if (/\/about\//.test(path) || /about\.html$/i.test(path)) return 'mega-about';
+  if (/\/solutions?\//.test(path) || /(decentralized|enterprise|privacy|real-world|web3-infrastructure)/.test(path)) return 'mega-solution';
+  if (/\/community\//.test(path) || /(ecosystem-builders|unova-incubation-hub)/.test(path)) return 'mega-community';
+  if (/\/build\//.test(path)) return 'mega-build';
+  return null;
+}
+
+function setNavActiveFromPage() {
+  const section = getCurrentSection();
+  if (!section) return;
+  const triggers = document.querySelectorAll('.nav-mega-trigger');
+  const panels = document.querySelectorAll('.mega-panel');
+  const trigger = document.querySelector('.nav-mega-trigger[data-mega="' + section + '"]');
+  const panel = document.getElementById(section);
+  if (triggers.length) {
+    triggers.forEach((a) => a.classList.toggle('mega-link-active', a === trigger));
+  }
+  if (panels.length && panel) {
+    panels.forEach((p) => p.classList.toggle('hidden', p.id !== section));
+  }
+}
+
+if (typeof window !== 'undefined') {
+  window.__setNavActiveFromPage = setNavActiveFromPage;
+}
+
 // Hero video: ensure autoplay on load (desktop center + mobile in DJ slot; some browsers need explicit play())
 document.addEventListener('DOMContentLoaded', () => {
+  setNavActiveFromPage();
+
   const heroVideo = document.getElementById('unova-center-image');
   const heroVideoMobile = document.getElementById('unova-center-image-mobile');
   [heroVideo, heroVideoMobile].forEach((el) => {

@@ -35,6 +35,10 @@ export default defineConfig({
         web3Infrastructure: 'solutions/web3-infrastructure.html',
         ecosystemBuilders: 'community/ecosystem-builders.html',
         unovaIncubationHub: 'community/unova-incubation-hub.html',
+        unovaTestnet: 'build/unova-testnet.html',
+        unovaNop: 'build/unova-nop.html',
+        validatorNodes: 'build/validator-nodes.html',
+        uonToken: 'build/uon-token.html',
       },
       output: {
         entryFileNames: 'assets/[name]-[hash].js',
