@@ -1,0 +1,206 @@
+================================================================================
+UNOVA WEBSITE - SINGLE DOCUMENTATION FOR CHATBOT KNOWLEDGE BASE
+================================================================================
+
+This document describes all content, pages, and routes on the Unova website
+(unova.io) so a chatbot can answer user questions accurately. Use it as the
+single knowledge source for the chatbot.
+
+
+1. SITE OVERVIEW
+--------------------------------------------------------------------------------
+
+Unova is a hybrid blockchain and Web3 infrastructure for the real-world
+economy. It automates trust and verifies business data via smart contracts,
+ensuring privacy without central authorities. Tagline: "A Web3 Infrastructure
+for the Real-World Economy."
+
+The site has four main sections: About, Solution, Community, and Build. Each
+section has sub-pages linked from the main navigation (mega menu) and footer
+on every page.
+
+
+2. ALL ROUTES AND LINKS (USE THESE TO DIRECT USERS)
+--------------------------------------------------------------------------------
+
+Home
+  - index.html (homepage)
+
+About (section)
+  - about/about.html - About Unova
+  - about/foundation.html - Unova Foundation
+  - about/contact-us.html - Contact Us
+  - about/support.html - Support
+
+Solutions (section)
+  - solutions/decentralized-finance-defi.html - Decentralized Finance (DeFi)
+  - solutions/enterprise-consumer-applications.html - Enterprise & Consumer Apps (Supply Chain)
+  - solutions/real-world-assets.html - Real World Assets (RWA)
+  - solutions/privacy-data-transmission.html - Privacy Data Transmission
+  - solutions/decentralized-ai.html - Decentralized AI and autonomous operational decision-making
+  - solutions/web3-infrastructure.html - Unova Web3 Infrastructure
+
+Community (section)
+  - community/ecosystem-builders.html - Ecosystem Builders
+  - community/unova-incubation-hub.html - Unova Incubation Hub
+  External: Telegram https://t.me/unova_io | X (Twitter) https://x.com/unova_io |
+  LinkedIn https://www.linkedin.com/company/unova-io/ | Discord (link on site)
+
+Build (section)
+  - build/unova-testnet.html - Unova Testnet
+  - build/unova-nop.html - Unova NOP
+  - build/validator-nodes.html - Validator Nodes
+  - build/uon-token.html - The UON Token
+  - Grants: Coming Soon (links to index.html#build on homepage)
+  - Unova Testnet Explorer (external): https://explorertest.unova.io/
+
+Contact
+  - Email: Info@unova.io
+  - Unova Foundation is based in Zug, Switzerland.
+
+
+3. PAGE-BY-PAGE CONTENT (FOR CHATBOT ANSWERS)
+--------------------------------------------------------------------------------
+
+Homepage (index.html)
+  Hero: "Unova is a hybrid blockchain that automates trust and verifies
+  business data via smart contracts, ensuring privacy without relying on
+  central authorities." Section "Why Unova" has four tiles: (01) Coordination,
+  Sovereignty, Trust - real-world economy collaboration, Web3 infrastructure
+  without central platforms; (02) Integration, Decentralization, Mobility -
+  multi-party coordination, no data handover; (03) Privacy, Control,
+  Verification - Private Data Transmission for secure, verifiable data
+  exchange; (04) Unova Community - global community, open ecosystem, data
+  ownership. Three feature tiles: Setup a Wallet, The UON Token, Build on
+  Unova. "Unova Solutions" section lists Supply Chain, DeFi, RWA, NFT,
+  Regulation and Compliance, AI-driven Automation, Smart Contracts, Unova
+  Incubator Hub. "Join the Unova Community" with links to Telegram, LinkedIn,
+  X (Twitter), Contact (email). Footer repeats all About, Solutions,
+  Community, and Build links.
+
+About Unova (about/about.html)
+  "Unova Is A Blockchain Network" - with privacy-enabled data distribution
+  clusters and cross-cluster distribution, Web3 data distribution privacy
+  protocol, multi-layer architecture, blockchain, smart contracts, dApps,
+  powered by UON native cryptocurrency.
+
+Unova Foundation (about/foundation.html)
+  Independent non-profit foundation based in Zug, Switzerland. Purpose:
+  safeguard long-term integrity and sustainability of the Unova ecosystem.
+  Mandate includes supporting responsible innovation (grants, programs),
+  infrastructure stewardship, governance and independence. Grants and
+  ecosystem support via structured grants framework. Collaboration with
+  developers, validators, enterprises, institutions, researchers.
+
+Contact Us (about/contact-us.html)
+  Unova Foundation welcomes inquiries about mission, governance, ecosystem.
+  Contact areas: Grants & Ecosystem Support, Careers at Unova Foundation,
+  General & Institutional Inquiries. Location: Zug, Switzerland.
+
+Support (about/support.html)
+  Support page for Unova; content and resources for user and developer support.
+
+Decentralized Finance - DeFi (solutions/decentralized-finance-defi.html)
+  "Decentralized Finance - Built for the Real Economy." Unova enables DeFi
+  for real-world economic activity with programmable smart contracts and
+  privacy-preserving real-world data; automatic, transparent execution
+  without central intermediaries. Sections: Financial Logic Powered by
+  Verifiable Reality (first-party data, less oracle dependency, data
+  sovereignty); Real-World DeFi Use Cases - Automated Payments, Decentralized
+  Lending, Trade Finance, Parametric Insurance, Asset-Backed Investments;
+  Scale, Efficiency, Innovation - low transaction costs, enterprise
+  scalability, open architecture, privacy-preserving design. "Unova DeFi is
+  grounded in reality."
+
+Enterprise & Consumer Apps / Supply Chain (solutions/enterprise-consumer-applications.html)
+  Solutions for supply chain and enterprise coordination on Unova (verify
+  data, automate across parties).
+
+Real World Assets - RWA (solutions/real-world-assets.html)
+  Link physical assets to digital representations with verifiable data;
+  tracking, transfer, utilization in dApps.
+
+Privacy Data Transmission (solutions/privacy-data-transmission.html)
+  Secure, selective, verifiable data exchange between organizations without
+  exposing data publicly or to central platforms.
+
+Decentralized AI (solutions/decentralized-ai.html)
+  Decentralized AI and autonomous operational decision-making; trusted data
+  for AI, execution via smart contracts.
+
+Unova Web3 Infrastructure (solutions/web3-infrastructure.html)
+  Unova as Web3 infrastructure layer for builders and applications.
+
+Ecosystem Builders (community/ecosystem-builders.html)
+  Spotlight on ecosystem builders. Hubwatch: operational solutions to
+  monitor, verify, and act on shared events across organizations; built on
+  Unova; shared operational visibility, event-based execution, enterprise
+  integration, reduced reliance on intermediaries; production-ready
+  deployments.
+
+Unova Incubation Hub (community/unova-incubation-hub.html)
+  Incubation hub for builders; infrastructure and ecosystem access to
+  accelerate real-world decentralized applications.
+
+Unova Testnet (build/unova-testnet.html)
+  Public testing environment for developers and teams to build, test, and
+  validate applications before production. Testnet provides public
+  environment for integrations, smart contracts, execution workflows without
+  affecting live operations. Network name: Unova Testnet. Users can add
+  Unova Testnet to wallet; see page for network configuration and steps.
+
+Unova NOP (build/unova-nop.html)
+  Unova Network Operator Package / node deployment. For running Standard
+  Network Nodes (e.g. Type 3) on Unova Testnet; install and configure node
+  and connect to Unova Testnet.
+
+Validator Nodes (build/validator-nodes.html)
+  Information on running validator nodes on the Unova network; secure the
+  network and participate in consensus.
+
+The UON Token (build/uon-token.html)
+  UON powers the Unova network: transaction fees, smart contract execution,
+  network security, decentralized application operations. Native
+  cryptocurrency of Unova.
+
+Grants
+  Grants program is "Coming Soon"; link from site goes to Build section on
+  homepage (index.html#build).
+
+Unova Testnet Explorer
+  External block explorer for Unova Testnet: https://explorertest.unova.io/
+
+
+4. QUICK REFERENCE FOR CHATBOT
+--------------------------------------------------------------------------------
+
+- What is Unova? Hybrid blockchain; Web3 infrastructure for the real-world
+  economy; automates trust, verifies data via smart contracts, privacy
+  without central authorities.
+
+- How to contact? Email Info@unova.io; Contact Us page about/contact-us.html;
+  Foundation in Zug, Switzerland.
+
+- Where is Foundation? Zug, Switzerland.
+
+- What is UON? Native token; powers network, fees, smart contracts, security,
+  dApp operations.
+
+- What is Testnet? Public test environment for building and testing before
+  production; explorertest.unova.io for explorer.
+
+- Solutions? DeFi, Enterprise/Supply Chain, RWA, Privacy Data Transmission,
+  Decentralized AI, Web3 Infrastructure (each has own page under solutions/).
+
+- Community? Telegram (t.me/unova_io), X (x.com/unova_io), LinkedIn
+  (linkedin.com/company/unova-io/), Ecosystem Builders page, Unova Incubation
+  Hub page.
+
+- Build resources? Unova Testnet, Unova NOP, Validator Nodes, UON Token
+  (build/), Grants coming soon, Explorer explorertest.unova.io.
+
+
+5. COPYRIGHT
+--------------------------------------------------------------------------------
+
+Copyright 2026 unova.io. All rights reserved.
