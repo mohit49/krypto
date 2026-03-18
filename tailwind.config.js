@@ -1,9 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./about/**/*.html",
-    "./solutions/**/*.html",
+    "./**/*.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   safelist: [
@@ -12,6 +10,9 @@ export default {
     'w-[280px]',
     'h-[280px]',
     'w-[300px]',
+    'w-[40%]',
+    'w-[45%]',
+    'w-[50%]',
     'w-[360px]',
     'h-[360px]',
   ],
