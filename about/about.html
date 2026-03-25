@@ -17,30 +17,13 @@
     <script type="module" src="/src/main.js"></script>
     <style>
         body { font-family: "proxima-nova", sans-serif; }
-        .about-stack h2 { margin: 0; line-height: 0.82; letter-spacing: -0.02em; }
-        .about-stack h2 + h2 { margin-top: 0; padding-top: 0; }
-        .about-stack .about-block { margin-bottom: 0; }
-        .about-stack .about-block + .about-block { margin-top: 0; padding-top: 0; }
-        .about-hero-line { font-size: clamp(1rem, 4vw, 1.5rem); font-weight: 300; }
-        /* Desktop: original large stacked hero */
-        .about-inner {
-            container-type: inline-size;
-            container-name: about-inner;
-            font-size: 30cqw;
-        }
-        .about-inner h2 { font-size: 100%; white-space: nowrap; font-weight: 300; }
-        .about-inner p { font-size: 33.33%; }
-        @media (min-width: 768px) {
-            .about-inner { font-size: 120px; }
-            .about-inner h2 { font-size: 100%; }
-            .about-inner-is-blockchain { margin-left: -320px; }
-            .about-inner-network {
-                display: flex;
-                justify-content: flex-end;
-                flex-direction: column;
-                align-items: flex-end;
-            }
-            .about-inner-network p { font-size: 20px; width: 80%; max-width: 80%; }
+        .about-hero-headline {
+            font-size: clamp(0.65rem, 3vw, 40px);
+            font-weight: 300;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin: 0;
+            white-space: nowrap;
         }
         /* Four tiles: on mobile height auto so image shows full; desktop auto */
         .about-tile-tall,
@@ -270,35 +253,14 @@
         <main class="flex-1 px-0 md:px-12 lg:px-16 py-12 md:py-16">
             <h1 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 uppercase tracking-wide mb-12 md:mb-16 text-center">About Unova</h1>
             <div class="w-full lg:max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
-                <!-- Mobile: single line + centered full-width paragraph -->
-                <div class="about-stack md:hidden w-full text-gray-900 flex flex-col items-center gap-6">
-                    <div class="about-block w-full flex flex-wrap items-baseline justify-center gap-x-2 min-w-0">
-                        <span class="about-hero-line font-light uppercase tracking-tight">Unova</span>
-                        <span class="about-hero-line font-light uppercase tracking-tight">Is A</span>
-                        <span class="about-hero-line font-light uppercase tracking-tight">Blockchain</span>
-                        <span class="about-hero-line font-light uppercase tracking-tight">Network</span>
-                    </div>
-                    <p class="w-full text-center text-black text-base italic leading-relaxed">With privacy-enabled data distribution clusters and cross-cluster distribution capabilities, made possible by the Web3 data distribution privacy protocol and multi-layer architecture. It's the foundation of a new way of distributing data built on Web3, leveraging its own blockchain, smart contracts, dApps, and powered by UON, its native cryptocurrency.</p>
-                </div>
-                <!-- Desktop: original stacked large type + 33% paragraph -->
-                <div class="about-stack hidden md:flex w-full text-gray-900 text-center flex-col flex-wrap items-stretch justify-center gap-0">
-                <div class="about-block w-full flex flex-col items-start min-w-0 text-left">
-                    <div class="about-inner min-w-0 w-full">
-                        <h2 class="font-light uppercase tracking-tight">Unova</h2>
-                    </div>
-                </div>
-                <div class="about-block w-full md:ml-8 flex flex-col items-center min-w-0 text-center self-center">
-                    <div class="about-inner about-inner-is-blockchain min-w-0 w-full">
-                        <h2 class="font-light uppercase tracking-tight">Is A</h2>
-                        <h2 class="font-light uppercase tracking-tight">Blockchain</h2>
-                    </div>
-                </div>
-                <div class="about-block w-full md:ml-8 flex flex-col items-end min-w-0 text-right self-end">
-                    <div class="about-inner about-inner-network min-w-0 w-full">
-                        <h2 class="font-light uppercase tracking-tight">Network</h2>
-                        <p class="mt-6 md:mt-8 text-black min-w-0 italic leading-relaxed">With privacy-enabled data distribution clusters and cross-cluster distribution capabilities, made possible by the Web3 data distribution privacy protocol and multi-layer architecture. It's the foundation of a new way of distributing data built on Web3, leveraging its own blockchain, smart contracts, dApps, and powered by UON, its native cryptocurrency.</p>
-                    </div>
-                </div>
+                <!-- Hero: one-line headline + centered paragraph -->
+                <div class="w-full text-gray-900 flex flex-col items-center text-center gap-6 md:gap-8 px-2">
+                    <h2 class="about-hero-headline uppercase tracking-tight">
+                        Unova Is A Blockchain Network
+                    </h2>
+                    <p class="w-full max-w-3xl mx-auto text-black text-base md:text-lg italic leading-relaxed text-center">
+                        With privacy-enabled data distribution clusters and cross-cluster distribution capabilities, made possible by the Web3 data distribution privacy protocol and multi-layer architecture. It's the foundation of a new way of distributing data built on Web3, leveraging its own blockchain, smart contracts, dApps, and powered by UON, its native cryptocurrency.
+                    </p>
                 </div>
                 <!-- Four tiles row: equal width, images in sequence -->
                 <div class="about-tiles-row w-full flex flex-nowrap items-stretch md:items-end mt-12 md:mt-16 overflow-x-auto overflow-y-hidden" style="gap: 20px;">
