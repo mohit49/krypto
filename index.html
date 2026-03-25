@@ -237,8 +237,10 @@
         <!-- Hero Content (desktop only: centered in screen) -->
         <div id="hero-content-wrapper" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[52%] max-w-[540px] max-xl:hidden">
             <div class="w-full hero-content">
-                <video id="unova-center-image" class="w-full h-auto max-h-[52vh] mx-auto object-contain [mix-blend-mode:lighten]" autoplay muted loop playsinline aria-label="Unova">
+                <video id="unova-center-image" class="w-full h-auto max-h-[52vh] mx-auto object-contain [mix-blend-mode:lighten]" autoplay muted loop playsinline webkit-playsinline aria-label="Unova">
+                    <!-- WebM first (Chrome/Android); Safari skips WebM and uses MOV with alpha -->
                     <source src="./assets/Header.webm" type="video/webm">
+                    <source src="./assets/Header.mov" type="video/quicktime">
                 </video>
             </div>
         </div>
@@ -248,8 +250,9 @@
             <!-- UNOVA logo behind on mobile only -->
             <img src="./assets/unova-center-text.png" alt="" class="absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 max-w-[85%] max-h-[60%] w-auto h-auto object-contain opacity-90 hidden pointer-events-none z-0" aria-hidden="true">
             <!-- Video on mobile (in place of DJ) -->
-            <video id="unova-center-image-mobile" class="relative z-10 h-full w-auto max-h-full object-contain max-xl:block xl:hidden [mix-blend-mode:lighten]" autoplay muted loop playsinline aria-label="Unova">
+            <video id="unova-center-image-mobile" class="relative z-10 h-full w-auto max-h-full object-contain max-xl:block xl:hidden [mix-blend-mode:lighten]" autoplay muted loop playsinline webkit-playsinline aria-label="Unova">
                 <source src="./assets/Header.webm" type="video/webm">
+                <source src="./assets/Header.mov" type="video/quicktime">
             </video>
             <!-- DJ image: desktop only (hidden; video used on mobile) -->
             <img id="dj-center-image" src="./assets/ceter-dj.png" alt="DJ" class="relative z-10 h-full w-auto object-contain max-xl:hidden xl:hidden">
