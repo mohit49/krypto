@@ -588,32 +588,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 console.log('Logino app initialized!');
 
-// Update time and day/night mode
-function updateTimeAndMode() {
+// Live clock (HH:MM:SS)
+function updateTimeDisplay() {
   const now = new Date();
   const hours = now.getHours();
   const minutes = now.getMinutes().toString().padStart(2, '0');
   const seconds = now.getSeconds().toString().padStart(2, '0');
-  
-  // Format time as HH:MM:SS
   const timeString = `${hours.toString().padStart(2, '0')}:${minutes}:${seconds}`;
-  
-  // Determine day or night (6 AM to 6 PM is Day, otherwise Night)
-  const mode = (hours >= 6 && hours < 18) ? 'Day' : 'Night';
-  
-  // Update DOM
   const timeElement = document.getElementById('current-time');
-  const modeElement = document.getElementById('day-night-mode');
-  
-  if (timeElement) {
-    timeElement.textContent = timeString;
-  }
-  
-  if (modeElement) {
-    modeElement.textContent = mode;
-  }
+  if (timeElement) timeElement.textContent = timeString;
 }
 
-// Update time immediately and then every second
-updateTimeAndMode();
-setInterval(updateTimeAndMode, 1000);
+updateTimeDisplay();
+setInterval(updateTimeDisplay, 1000);

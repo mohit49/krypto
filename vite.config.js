@@ -23,6 +23,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
+        whatIsMetamask: 'what-is-metamask.html',
         about: 'about/about.html',
         contactUs: 'about/contact-us.html',
         foundation: 'about/foundation.html',
