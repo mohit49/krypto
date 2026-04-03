@@ -302,20 +302,3 @@
 .solutions-panel.hidden {
   display: none;
 }
-
-/* Community Swiper: smooth transition for scale/position */
-.community-swiper .swiper-slide {
-  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-/* Top-left zoomed (scale 1), first slide no vertical offset; rest zoom out and alternating up/down */
-.community-swiper .swiper-slide.slide-pos-0.slide-alt-up,
-.community-swiper .swiper-slide.slide-pos-0.slide-alt-down { transform: scale(1) translateY(0); }
-.community-swiper .swiper-slide.slide-pos-1.slide-alt-up { transform: scale(0.8) translateY(-12px); }
-.community-swiper .swiper-slide.slide-pos-1.slide-alt-down { transform: scale(0.8) translateY(12px); }
-.community-swiper .swiper-slide.slide-pos-2.slide-alt-up { transform: scale(0.7) translateY(-12px); transform-origin: left center; }
-.community-swiper .swiper-slide.slide-pos-2.slide-alt-down { transform: scale(0.7) translateY(12px); transform-origin: left center; }
-.community-swiper .swiper-slide.slide-pos-3.slide-alt-up,
-.community-swiper .swiper-slide.slide-pos-4.slide-alt-up { transform: scale(0.6) translateY(-12px); transform-origin: left center; }
-.community-swiper .swiper-slide.slide-pos-3.slide-alt-down,
-.community-swiper .swiper-slide.slide-pos-4.slide-alt-down { transform: scale(0.6) translateY(12px); transform-origin: left center; }

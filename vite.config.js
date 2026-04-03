@@ -1,6 +1,24 @@
 import { defineConfig } from 'vite'
+import { cpSync, existsSync, mkdirSync } from 'node:fs'
+import { resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 export default defineConfig({
+  plugins: [
+    {
+      name: 'copy-pdf-to-build-finals',
+      closeBundle() {
+        const src = resolve(__dirname, 'pdf')
+        const dest = resolve(__dirname, 'build-finals', 'pdf')
+        if (existsSync(src)) {
+          mkdirSync(resolve(__dirname, 'build-finals'), { recursive: true })
+          cpSync(src, dest, { recursive: true })
+        }
+      },
+    },
+  ],
   base: './', // Relative paths so build can be opened directly (file:// or double-click index.html)
   root: '.',
   publicDir: 'public',

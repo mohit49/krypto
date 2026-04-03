@@ -14,10 +14,9 @@
       async
     ></script>
     <link rel="stylesheet" href="https://use.typekit.net/ion1ndn.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <style>.mega-link-active { color: rgb(37 99 235) !important; } #nav-mega-wrapper.mega-menu-open #mega-menu-outer { opacity: 1; visibility: visible; pointer-events: auto; }</style>
-  <script type="module" crossorigin src="./assets/main-Nq35Mj35.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-Df26s62M.css">
+  <script type="module" crossorigin src="./assets/main-d4WE2f0H.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-DNJy9zOP.css">
 </head>
 <body class="bg-[#262626] h-full m-0 p-[15px]">
     <!-- First Section - Full Screen with Header (mouse parallax only when in view) -->
@@ -541,28 +540,7 @@
             </div>
         </div>
 
-        <!-- Swiper slider: centered -->
-        <div class="community-swiper-wrap relative z-30 mt-4 w-[95%] max-md:w-full mx-auto flex flex-col items-center">
-        <div class="community-swiper swiper w-full">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="./assets/twitter-card-Bx3O38uG.png" alt="Unova Community" class="w-full h-auto object-cover rounded-lg"></div>
-                <div class="swiper-slide"><img src="./assets/twitter-card-Bx3O38uG.png" alt="Unova Community" class="w-full h-auto object-cover rounded-lg"></div>
-                <div class="swiper-slide"><img src="./assets/twitter-card-Bx3O38uG.png" alt="Unova Community" class="w-full h-auto object-cover rounded-lg"></div>
-                <div class="swiper-slide"><img src="./assets/twitter-card-Bx3O38uG.png" alt="Unova Community" class="w-full h-auto object-cover rounded-lg"></div>
-                <div class="swiper-slide"><img src="./assets/twitter-card-Bx3O38uG.png" alt="Unova Community" class="w-full h-auto object-cover rounded-lg"></div>
-            </div>
-        </div>
-        <div class="community-swiper-nav mt-4 flex items-center justify-center gap-2 z-10">
-          <button type="button" class="community-swiper-prev w-12 h-12 flex items-center justify-center rounded-full border-2 border-black bg-white hover:bg-black hover:text-white transition-colors" aria-label="Previous">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-          </button>
-          <button type="button" class="community-swiper-next w-12 h-12 flex items-center justify-center rounded-full border-2 border-black bg-white hover:bg-black hover:text-white transition-colors" aria-label="Next">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </button>
-        </div>
-        </div>
-
-        <!-- Square below slider: 800px -->
+        <!-- Square below heading: 800px -->
         <div class="relative z-30 w-full max-w-[1280px] mx-auto px-6 sm:px-8 mt-12 md:mt-16 flex justify-center">
           <div class="group relative w-[300px] h-[300px] md:w-[800px] md:h-[800px] border-l border-r border-[#e4e4e4] shrink-0 cursor-default">
             <!-- Vertical and horizontal center lines -->
@@ -635,51 +613,6 @@
           </div>
         </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        if (typeof Swiper !== 'undefined') {
-          var communitySwiper = new Swiper('.community-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 40,
-            loop: true,
-            speed: 500,
-            cssMode: false,
-            pagination: false,
-            navigation: { nextEl: '.community-swiper-next', prevEl: '.community-swiper-prev' },
-            breakpoints: { 640: { slidesPerView: 2.2 }, 768: { slidesPerView: 3.2 }, 1024: { slidesPerView: 3.5 } },
-            on: {
-              init: function() { var s = this; requestAnimationFrame(function() { setCommunitySlideScale(s); }); },
-              slideChangeTransitionEnd: function() { setCommunitySlideScale(this); },
-              transitionEnd: function() { setCommunitySlideScale(this); }
-            }
-          });
-          function setCommunitySlideScale(swiper) {
-            var container = swiper.el.getBoundingClientRect();
-            var slides = Array.from(swiper.slides);
-            var withLeft = slides.map(function(slide) {
-              var r = slide.getBoundingClientRect();
-              return { slide: slide, left: r.left, right: r.right };
-            });
-            withLeft.sort(function(a, b) { return a.left - b.left; });
-            var startIndex = 0;
-            for (var i = 0; i < withLeft.length; i++) {
-              if (withLeft[i].right > container.left && withLeft[i].left < container.right) {
-                startIndex = i;
-                break;
-              }
-            }
-            withLeft.forEach(function(item, i) {
-              var slide = item.slide;
-              var pos = (i - startIndex + withLeft.length) % withLeft.length;
-              var p = Math.min(pos, 4);
-              var alt = p % 2 === 0 ? 'slide-alt-up' : 'slide-alt-down';
-              slide.className = slide.className.replace(/\bslide-pos-\d\b/g, '').replace(/\bslide-alt-(up|down)\b/g, '') + ' slide-pos-' + p + ' ' + alt;
-            });
-          }
-        }
-      });
-    </script>
     <!-- Footer (no bg) -->
     <footer class="w-full py-12 md:py-16">
         <div class="w-full md:w-[80%] mx-auto px-3 sm:px-8 md:px-10 lg:px-12 xl:px-16">
@@ -691,6 +624,12 @@
                         <li><a href="./about/foundation.html" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Foundation</a></li>
                         <li><a href="./about/contact-us.html" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Contact Us</a></li>
                         <li><a href="./about/support.html" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Support</a></li>
+                    </ul>
+                    <h3 class="text-white font-semibold text-[25px] max-md:text-[13px] mb-4 mt-8 max-md:mt-6">White papers</h3>
+                    <ul class="space-y-3 max-md:space-y-0 max-md:mt-[5px] [&>li]:max-md:my-0">
+                        <li><a href="./pdf/Whitepaper_Unova1_26.pdf" target="_blank" rel="noopener noreferrer" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Whitepaper</a></li>
+                        <li><a href="./pdf/Unova_Litepaper.pdf" target="_blank" rel="noopener noreferrer" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Litepaper</a></li>
+                        <li><a href="./pdf/UONTokenPaper.pdf" target="_blank" rel="noopener noreferrer" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">UON Tokenpaper</a></li>
                     </ul>
                 </div>
                 <div>
