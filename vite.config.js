@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import { cpSync, existsSync, mkdirSync } from 'node:fs'
+import { cpSync, copyFileSync, existsSync, mkdirSync, readdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -10,11 +10,21 @@ export default defineConfig({
     {
       name: 'copy-pdf-to-build-finals',
       closeBundle() {
-        const src = resolve(__dirname, 'pdf')
-        const dest = resolve(__dirname, 'build-finals', 'pdf')
-        if (existsSync(src)) {
-          mkdirSync(resolve(__dirname, 'build-finals'), { recursive: true })
-          cpSync(src, dest, { recursive: true })
+        mkdirSync(resolve(__dirname, 'build-finals'), { recursive: true })
+        const legacyPdf = resolve(__dirname, 'pdf')
+        const destLegacy = resolve(__dirname, 'build-finals', 'pdf')
+        if (existsSync(legacyPdf)) {
+          cpSync(legacyPdf, destLegacy, { recursive: true })
+        }
+        const assetsDir = resolve(__dirname, 'assets')
+        const destAssets = resolve(__dirname, 'build-finals', 'assets')
+        if (existsSync(assetsDir)) {
+          mkdirSync(destAssets, { recursive: true })
+          for (const name of readdirSync(assetsDir)) {
+            if (name.toLowerCase().endsWith('.pdf')) {
+              copyFileSync(resolve(assetsDir, name), resolve(destAssets, name))
+            }
+          }
         }
       },
     },

@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unova Foundation - Unova</title>
+    <link rel="icon" href="../favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+
+    <title>Unova Foundation</title>
     <link rel="stylesheet" href="https://use.typekit.net/ion1ndn.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <style>.mega-link-active { color: rgb(37 99 235) !important; } #nav-mega-wrapper.mega-menu-open #mega-menu-outer { opacity: 1; visibility: visible; pointer-events: auto; }</style>
@@ -75,7 +78,7 @@
                             <a href="../build/unova-testnet.html" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="../assets/devel-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Unova Testnet</span></a>
                             <a href="../build/unova-nop.html" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="../assets/devel-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Unova NOP</span></a>
                             <a href="../build/validator-nodes.html" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="../assets/validator-node.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Validator Nodes</span></a>
-                            <a href="../index.html#build" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="../assets/grants-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Grants (Coming Soon)</span></a>
+                            <div class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white text-gray-900 font-semibold text-base p-4 text-center cursor-default" aria-disabled="true"><img src="../assets/grants-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Grants (Coming Soon)</span></div>
                             <a href="../build/uon-token.html" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="../assets/uno-token-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>The UON Token</span></a>
                             <a href="https://explorertest.unova.io/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center min-h-[160px] rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold text-base transition-colors p-4 text-center"><img src="../assets/uno-bc-d-build.png" alt="" class="w-10 h-10 object-contain mb-2"><span>Unova Testnet Explorer</span></a>
                         </div>
@@ -151,7 +154,7 @@
                             <a href="../build/unova-testnet.html" class="text-gray-300 hover:text-white text-sm py-1.5">Unova Testnet</a>
                             <a href="../build/unova-nop.html" class="text-gray-300 hover:text-white text-sm py-1.5">Unova NOP</a>
                             <a href="../build/validator-nodes.html" class="text-gray-300 hover:text-white text-sm py-1.5">Validator Nodes</a>
-                            <a href="../index.html#build" class="text-gray-300 hover:text-white text-sm py-1.5">Grants (Coming Soon)</a>
+                            <span class="text-gray-400 text-sm py-1.5 cursor-default">Grants (Coming Soon)</span>
                             <a href="../build/uon-token.html" class="text-gray-300 hover:text-white text-sm py-1.5">The UON Token</a>
                             <a href="https://explorertest.unova.io/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white text-sm py-1.5">Unova Testnet Explorer</a>
                         </div>
@@ -373,11 +376,12 @@
                         <li><a href="./contact-us.html" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Contact Us</a></li>
                         <li><a href="./support.html" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Support</a></li>
                     </ul>
-                    <h3 class="text-white font-semibold text-[25px] max-md:text-[13px] mb-4 mt-8 max-md:mt-6">White papers</h3>
+                    <h3 class="text-white font-semibold text-[25px] max-md:text-[13px] mb-4 mt-8 max-md:mt-6">Documentation</h3>
                     <ul class="space-y-3 max-md:space-y-0 max-md:mt-[5px] [&>li]:max-md:my-0">
-                        <li><a href="../pdf/Whitepaper_Unova1_26.pdf" target="_blank" rel="noopener noreferrer" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Whitepaper</a></li>
-                        <li><a href="../pdf/Unova_Litepaper.pdf" target="_blank" rel="noopener noreferrer" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Litepaper</a></li>
-                        <li><a href="../pdf/UONTokenPaper.pdf" target="_blank" rel="noopener noreferrer" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">UON Tokenpaper</a></li>
+                        <li><a href="../assets/WhitepaperUnova1_26.pdf" target="_blank" rel="noopener noreferrer" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Whitepaper</a></li>
+                        <li><a href="../assets/Unova_Litepaper.pdf" target="_blank" rel="noopener noreferrer" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Litepaper</a></li>
+                        <li><a href="../assets/Unova_Tokenomics.pdf" target="_blank" rel="noopener noreferrer" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Tokenomics</a></li>
+                        <li><a href="../assets/UONTokenPaper.pdf" target="_blank" rel="noopener noreferrer" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">UON Tokenpaper</a></li>
                     </ul>
                 </div>
                 <div>
@@ -407,7 +411,7 @@
                         <li><a href="../build/unova-testnet.html" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Testnet</a></li>
                         <li><a href="../build/unova-nop.html" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova NOP</a></li>
                         <li><a href="../build/validator-nodes.html" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Validator Nodes</a></li>
-                        <li><a href="../index.html#build" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Grants (Coming Soon)</a></li>
+                        <li><span class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] cursor-default">Grants (Coming Soon)</span></li>
                         <li><a href="../build/uon-token.html" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">The UON Token</a></li>
                         <li><a href="https://explorertest.unova.io/" target="_blank" rel="noopener noreferrer" class="text-[20px] max-md:text-[10px] font-thin text-[#bebdbd] hover:text-white transition-colors">Unova Testnet Explorer</a></li>
                     </ul>
