@@ -1,0 +1,5 @@
+# Apache: send /index.html to canonical site root (https://unova.io/)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^index\.html$ / [R=301,L]
+</IfModule>

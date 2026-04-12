@@ -1,0 +1,2 @@
+# Netlify / compatible hosts: canonical home URL (no index.html in address bar)
+/index.html  /  301
