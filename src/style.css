@@ -181,17 +181,79 @@
   }
 }
 
-/* Tile number: small by default, large when active */
-.solution-tile .tile-number {
-  font-size: 50px;
+/* Tile stack: smaller title/body/number when tile is not scroll-active (not .active) */
+.solution-tile-title {
+  font-size: 28px;
 }
-.solution-tile.active .tile-number {
-  font-size: 200px;
+@media (max-width: 1366px) {
+  .solution-tile-title {
+    font-size: 18px;
+  }
 }
 @media (max-width: 767px) {
-  .solution-tile .tile-number,
+  .solution-tile-title {
+    font-size: 16px;
+  }
+}
+
+.solution-tile.active .solution-tile-title {
+  font-size: 34px;
+}
+@media (max-width: 1366px) {
+  .solution-tile.active .solution-tile-title {
+    font-size: 22px;
+  }
+}
+@media (max-width: 767px) {
+  .solution-tile.active .solution-tile-title {
+    font-size: 19px;
+  }
+}
+
+.solution-tile-copy {
+  font-size: 20px;
+}
+@media (max-width: 1366px) {
+  .solution-tile-copy {
+    font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
+  .solution-tile-copy {
+    font-size: 14px;
+  }
+}
+
+.solution-tile.active .solution-tile-copy {
+  font-size: 24px;
+}
+@media (max-width: 1366px) {
+  .solution-tile.active .solution-tile-copy {
+    font-size: 17px;
+  }
+}
+@media (max-width: 767px) {
+  .solution-tile.active .solution-tile-copy {
+    font-size: 16px;
+  }
+}
+
+/* Tile number: smaller when not active; large when tile is scroll-active */
+.solution-tile:not(.active) .tile-number {
+  font-size: 32px;
+}
+@media (max-width: 767px) {
+  .solution-tile:not(.active) .tile-number {
+    font-size: 14px;
+  }
+}
+
+.solution-tile.active .tile-number {
+  font-size: 168px;
+}
+@media (max-width: 767px) {
   .solution-tile.active .tile-number {
-    font-size: 20px;
+    font-size: 17px;
   }
 }
 
