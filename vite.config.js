@@ -26,6 +26,10 @@ export default defineConfig({
             }
           }
         }
+        const knowledgeDoc = resolve(__dirname, 'Unova-Website-Documentation.txt')
+        if (existsSync(knowledgeDoc)) {
+          copyFileSync(knowledgeDoc, resolve(__dirname, 'build-finals', 'Unova-Website-Documentation.txt'))
+        }
       },
     },
   ],
