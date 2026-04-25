@@ -1,4 +1,5 @@
 import './style.css'
+import heroTransparentGifUrl from '../assets/Header-transparent.gif'
 
 // Active nav: set from current pathname so it works in build folder and all pages
 function getCurrentSection() {
@@ -30,12 +31,37 @@ if (typeof window !== 'undefined') {
   window.__setNavActiveFromPage = setNavActiveFromPage;
 }
 
+function shouldUseHeroGif() {
+  const ua = navigator.userAgent || '';
+  const vendor = navigator.vendor || '';
+  const isIos = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isSafari = /Safari/.test(ua) && /Apple/.test(vendor) && !/CriOS|FxiOS|EdgiOS|Chrome|Chromium|Android/.test(ua);
+  return isIos || isSafari;
+}
+
+function replaceHeroVideoWithGif(video) {
+  if (!video || video.tagName !== 'VIDEO') return video;
+
+  const gif = document.createElement('img');
+  gif.id = video.id;
+  gif.src = heroTransparentGifUrl;
+  gif.alt = video.getAttribute('aria-label') || 'Unova';
+  gif.className = video.className;
+  gif.setAttribute('aria-label', video.getAttribute('aria-label') || 'Unova');
+  video.replaceWith(gif);
+  return gif;
+}
+
 // Hero video: ensure autoplay on load (desktop center + mobile in DJ slot; some browsers need explicit play())
 document.addEventListener('DOMContentLoaded', () => {
   setNavActiveFromPage();
 
-  const heroVideo = document.getElementById('unova-center-image');
-  const heroVideoMobile = document.getElementById('unova-center-image-mobile');
+  let heroVideo = document.getElementById('unova-center-image');
+  let heroVideoMobile = document.getElementById('unova-center-image-mobile');
+  if (shouldUseHeroGif()) {
+    heroVideo = replaceHeroVideoWithGif(heroVideo);
+    heroVideoMobile = replaceHeroVideoWithGif(heroVideoMobile);
+  }
   [heroVideo, heroVideoMobile].forEach((el) => {
     if (el && typeof el.play === 'function') el.play().catch(() => {});
   });
