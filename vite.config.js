@@ -57,6 +57,7 @@ export default defineConfig({
         main: 'index.html',
         whatIsMetamask: 'what-is-metamask.html',
         about: 'about/about.html',
+        advisoryBoard: 'about/advisory-board.html',
         contactUs: 'about/contact-us.html',
         foundation: 'about/foundation.html',
         support: 'about/support.html',
